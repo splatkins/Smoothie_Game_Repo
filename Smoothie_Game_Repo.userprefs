@@ -1,8 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scipts\S_SpawnEnvironment.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scipts\S_CameraController.cs">
     <Files>
-      <File FileName="Assets\Scipts\S_SpawnEnvironment.cs" Line="16" Column="3" />
+      <File FileName="Assets\Scipts\S_SpawnEnvironment.cs" Line="12" Column="95" />
+      <File FileName="Assets\Scipts\S_CameraController.cs" Line="12" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
