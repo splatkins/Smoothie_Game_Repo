@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 1127145943}
   - component: {fileID: 1127145942}
   - component: {fileID: 1127145941}
+  - component: {fileID: 1127145946}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -231,10 +232,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1127145940}
-  m_LocalRotation: {x: 0.46193978, y: 0.33141357, z: -0.19134171, w: 0.8001032}
-  m_LocalPosition: {x: -6.16, y: 10.88, z: -5.1}
+  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: 0, y: 11, z: -8.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 60, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
+--- !u!114 &1127145946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1127145940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a192cf879e5eadd459f764e03227b636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perspectiveZoonSpeed: 0.1
+  orthoZoomSpeed: 0.5
+  panSpeed: 0.02
