@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Environment
   - Interactive
+  - CuttingStation
+  - BlendingStation
   layers:
   - Default
   - TransparentFX
