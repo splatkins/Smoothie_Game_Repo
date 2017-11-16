@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964137, b: 0.57481873, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &80921731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +151,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!223 &144689595 stripped
+Canvas:
+  m_PrefabParentObject: {fileID: 223715765814069564, guid: a0effcf41a6c02549af2b1b755101882,
+    type: 2}
+  m_PrefabInternal: {fileID: 1759008937}
+--- !u!1001 &440926225
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4629224332393278, guid: baca06154df5e5f41b5d681de07c2d46, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629224332393278, guid: baca06154df5e5f41b5d681de07c2d46, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629224332393278, guid: baca06154df5e5f41b5d681de07c2d46, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629224332393278, guid: baca06154df5e5f41b5d681de07c2d46, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629224332393278, guid: baca06154df5e5f41b5d681de07c2d46, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629224332393278, guid: baca06154df5e5f41b5d681de07c2d46, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629224332393278, guid: baca06154df5e5f41b5d681de07c2d46, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629224332393278, guid: baca06154df5e5f41b5d681de07c2d46, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629224332393278, guid: baca06154df5e5f41b5d681de07c2d46, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -45
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: baca06154df5e5f41b5d681de07c2d46, type: 2}
+  m_IsPrefabParent: 0
+--- !u!20 &641690829 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20691300126158968, guid: a0effcf41a6c02549af2b1b755101882,
+    type: 2}
+  m_PrefabInternal: {fileID: 1759008937}
 --- !u!1 &1127145940
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,12 +310,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   perspectiveZoonSpeed: 0.5
   orthoZoomSpeed: 0.5
-  panSpeed: 0.2
+  panSpeed: 0.05
   worldCam: {fileID: 1127145944}
   cuttingStationCam: {fileID: 1826556177}
   blendingStationCam: {fileID: 1127317513}
+  shakingStationCam: {fileID: 641690829}
   cuttingStationCanvas: {fileID: 1567176591}
   blendingStationCanvas: {fileID: 1737657246}
+  shakingStaionCanvas: {fileID: 144689595}
 --- !u!20 &1127317513 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20661458763476580, guid: d68ac002a18b9774f80a82b83ff020c2,
@@ -275,6 +333,53 @@ Canvas:
   m_PrefabParentObject: {fileID: 223344704770851720, guid: d68ac002a18b9774f80a82b83ff020c2,
     type: 2}
   m_PrefabInternal: {fileID: 1830283902}
+--- !u!1001 &1759008937
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4488317813778196, guid: a0effcf41a6c02549af2b1b755101882, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488317813778196, guid: a0effcf41a6c02549af2b1b755101882, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488317813778196, guid: a0effcf41a6c02549af2b1b755101882, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488317813778196, guid: a0effcf41a6c02549af2b1b755101882, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488317813778196, guid: a0effcf41a6c02549af2b1b755101882, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488317813778196, guid: a0effcf41a6c02549af2b1b755101882, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488317813778196, guid: a0effcf41a6c02549af2b1b755101882, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488317813778196, guid: a0effcf41a6c02549af2b1b755101882, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114928472734490270, guid: a0effcf41a6c02549af2b1b755101882,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1127145946}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a0effcf41a6c02549af2b1b755101882, type: 2}
+  m_IsPrefabParent: 0
 --- !u!20 &1826556177 stripped
 Camera:
   m_PrefabParentObject: {fileID: 20984283638820772, guid: 74d7405d50582bf449e88ba68e1912dc,
@@ -289,7 +394,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4936862235805614, guid: d68ac002a18b9774f80a82b83ff020c2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4936862235805614, guid: d68ac002a18b9774f80a82b83ff020c2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -328,6 +433,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920347329845050, guid: d68ac002a18b9774f80a82b83ff020c2, type: 2}
+      propertyPath: m_Name
+      value: BlendingStationCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d68ac002a18b9774f80a82b83ff020c2, type: 2}
@@ -385,6 +494,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294495373227318, guid: 74d7405d50582bf449e88ba68e1912dc, type: 2}
+      propertyPath: m_Name
+      value: CuttingStationCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74d7405d50582bf449e88ba68e1912dc, type: 2}

@@ -8,6 +8,7 @@ TagManager:
   - Interactive
   - CuttingStation
   - BlendingStation
+  - ShakingStation
   layers:
   - Default
   - TransparentFX

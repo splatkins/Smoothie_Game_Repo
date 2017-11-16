@@ -10,7 +10,7 @@ public class S_CameraController : MonoBehaviour
 
 	private float minX, maxX, minZ, maxZ;
 	//private Vector3 myPosition;
-	public float panSpeed = 0.2f;
+	public float panSpeed = 0.5f;
 
 	Ray ray;
 	RaycastHit hit;
@@ -18,8 +18,10 @@ public class S_CameraController : MonoBehaviour
 	public Camera worldCam;
 	public Camera cuttingStationCam;
 	public Camera blendingStationCam;
+	public Camera shakingStationCam;
 	public Canvas cuttingStationCanvas;
 	public Canvas blendingStationCanvas;
+	public Canvas shakingStaionCanvas;
 	bool canMoveWorldCam;
 
 
@@ -62,7 +64,7 @@ public class S_CameraController : MonoBehaviour
 				Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 
 				// Move worldCam across XY plane
-				worldCam.transform.Translate (-touchDeltaPosition.x * panSpeed, -touchDeltaPosition.y * panSpeed, 0);
+				worldCam.transform.Translate (-touchDeltaPosition.x * panSpeed * Time.deltaTime, -touchDeltaPosition.y * panSpeed* Time.deltaTime, 0);
 				worldCam.transform.position = new Vector3 (
 					Mathf.Clamp (transform.position.x, minX, maxX),
 					Mathf.Clamp(transform.position.y, 11, 11),
@@ -107,14 +109,20 @@ public class S_CameraController : MonoBehaviour
 			{
 				if (hit.transform.tag == "CuttingStation")
 				{
-					print("Hit Cutting Station");
+					print("Tapped Cutting Station");
 					ShowCuttingStationCam ();
 				}
 
 				if (hit.transform.tag == "BlendingStation")
 				{
-					print("Hit Blending Station");
+					print("Tapped Blending Station");
 					ShowBlendingStationCam ();
+				}
+
+				if (hit.transform.tag == "ShakingStation")
+				{
+					print("Tapped Shaking Station");
+					ShowShakingStationCam ();
 				}
 			}
 		}
@@ -128,6 +136,8 @@ public class S_CameraController : MonoBehaviour
 		cuttingStationCanvas.enabled = false;
 		blendingStationCam.enabled = false;
 		blendingStationCanvas.enabled = false;
+		shakingStationCam.enabled = false;
+		shakingStaionCanvas.enabled = false;
 	}
 
 	void ShowCuttingStationCam()
@@ -138,6 +148,8 @@ public class S_CameraController : MonoBehaviour
 		cuttingStationCanvas.enabled = true;
 		blendingStationCam.enabled = false;
 		blendingStationCanvas.enabled = false;
+		shakingStationCam.enabled = false;
+		shakingStaionCanvas.enabled = false;
 	}
 
 	void ShowBlendingStationCam()
@@ -148,5 +160,19 @@ public class S_CameraController : MonoBehaviour
 		cuttingStationCanvas.enabled = false;
 		blendingStationCam.enabled = true;
 		blendingStationCanvas.enabled = true;
+		shakingStationCam.enabled = false;
+		shakingStaionCanvas.enabled = false;
+	}
+
+	void ShowShakingStationCam()
+	{
+		worldCam.enabled = false;
+		canMoveWorldCam = false;
+		cuttingStationCam.enabled = false;
+		cuttingStationCanvas.enabled = false;
+		blendingStationCam.enabled = false;
+		blendingStationCanvas.enabled = false;
+		shakingStationCam.enabled = true;
+		shakingStaionCanvas.enabled = true;
 	}
 }
