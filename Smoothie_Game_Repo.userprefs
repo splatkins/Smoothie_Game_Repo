@@ -3,6 +3,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\S_CameraController.cs">
     <Files>
       <File FileName="Assets\Scripts\S_CameraController.cs" Line="13" Column="29" />
+      <File FileName="Assets\Scripts\S_InventoryManager.cs" Line="289" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
