@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\S_CameraController.cs" />
+     <Compile Include="Assets\Scripts\S_CuttingStationControls.cs" />
      <Compile Include="Assets\Scripts\S_InventoryManager.cs" />
      <Compile Include="Assets\Scripts\S_SpawnEnvironment.cs" />
  <Reference Include="UnityEngine.UI">

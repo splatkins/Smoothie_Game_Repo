@@ -9,6 +9,19 @@ TagManager:
   - CuttingStation
   - BlendingStation
   - ShakingStation
+  - LemonBowl
+  - CuttingBoard
+  - Lemon
+  - Strawberry
+  - StrawberryBowl
+  - Banana
+  - BananaBowl
+  - Orange
+  - OrangeBowl
+  - SlicedLemon
+  - SlicedStrawberry
+  - PeeledBanana
+  - PeeledOrange
   layers:
   - Default
   - TransparentFX

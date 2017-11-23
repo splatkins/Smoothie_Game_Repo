@@ -19,9 +19,15 @@ public class S_CameraController : MonoBehaviour
 	public Camera cuttingStationCam;
 	public Camera blendingStationCam;
 	public Camera shakingStationCam;
+
 	public Canvas cuttingStationCanvas;
 	public Canvas blendingStationCanvas;
 	public Canvas shakingStaionCanvas;
+
+	public GameObject cuttingStationControls;
+
+	public GameObject cuttingStationCollider;
+
 	bool canMoveWorldCam;
 
 
@@ -98,7 +104,7 @@ public class S_CameraController : MonoBehaviour
 			}
 		}
 
-		// check to see if interactive object touched
+		// check to see if interactive station touched
 		if (Input.GetTouch (0).phase == TouchPhase.Began)
 		{
 			ray = worldCam.ScreenPointToRay (Input.GetTouch (0).position);
@@ -134,6 +140,8 @@ public class S_CameraController : MonoBehaviour
 		canMoveWorldCam = true;
 		cuttingStationCam.enabled = false;
 		cuttingStationCanvas.enabled = false;
+		cuttingStationControls.GetComponent<S_CuttingStationControls> ().enabled = false;
+		cuttingStationCollider.GetComponent<BoxCollider> ().enabled = true;
 		blendingStationCam.enabled = false;
 		blendingStationCanvas.enabled = false;
 		shakingStationCam.enabled = false;
@@ -146,6 +154,8 @@ public class S_CameraController : MonoBehaviour
 		canMoveWorldCam = false;
 		cuttingStationCam.enabled = true;
 		cuttingStationCanvas.enabled = true;
+		cuttingStationControls.GetComponent<S_CuttingStationControls> ().enabled = true;
+		cuttingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		blendingStationCam.enabled = false;
 		blendingStationCanvas.enabled = false;
 		shakingStationCam.enabled = false;
@@ -158,6 +168,8 @@ public class S_CameraController : MonoBehaviour
 		canMoveWorldCam = false;
 		cuttingStationCam.enabled = false;
 		cuttingStationCanvas.enabled = false;
+		cuttingStationControls.GetComponent<S_CuttingStationControls> ().enabled = false;
+		cuttingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		blendingStationCam.enabled = true;
 		blendingStationCanvas.enabled = true;
 		shakingStationCam.enabled = false;
@@ -170,6 +182,8 @@ public class S_CameraController : MonoBehaviour
 		canMoveWorldCam = false;
 		cuttingStationCam.enabled = false;
 		cuttingStationCanvas.enabled = false;
+		cuttingStationControls.GetComponent<S_CuttingStationControls> ().enabled = false;
+		cuttingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		blendingStationCam.enabled = false;
 		blendingStationCanvas.enabled = false;
 		shakingStationCam.enabled = true;
