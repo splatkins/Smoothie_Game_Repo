@@ -5,7 +5,7 @@ using UnityEngine;
 public class S_CustomerGeneration : MonoBehaviour
 {
 	// list of female heads
-	public List<SpriteRenderer> femaleHeads = new List<SpriteRenderer>();
+	public List<Sprite> femaleHeads = new List<Sprite>();
 
 	// list of female heads
 	public List<Sprite> maleHeads = new List<Sprite>();
@@ -16,7 +16,7 @@ public class S_CustomerGeneration : MonoBehaviour
 	// list of male bodies
 	public List<Sprite> maleBodies = new List<Sprite>();
 
-	public SpriteRenderer myHead;
+
 
 	// Use this for initialization
 	void Start ()
@@ -25,37 +25,90 @@ public class S_CustomerGeneration : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
-	{
-		
-	}
+//	void Update ()
+//	{
+//		
+//	}
 
 	void MaleOrFemale ()
 	{
-		//myHead = gameObject.GetComponent<Sprite> ();
-
 		int maleOrFemale = Random.Range(0, 10); // 0, 1, 2, 3, 4 = male, 5, 6, 7, 8, 9 = female
 
-		if (maleOrFemale <= 4)
+		if (maleOrFemale <= 4) // female
 		{
-			int randomHead = Random.Range (0, 2);
+			// head
+			int randomHead = Random.Range (0, 3);
+
+			print ("female head " + (randomHead + 1));
 
 			if (randomHead == 0)
 			{
-				myHead = femaleHeads [0].sprite;
+				GameObject.Find ("Head").GetComponent<SpriteRenderer> ().sprite = femaleHeads [0];
 			}
 			else if (randomHead == 1)
 			{
-				myHead.sprite = femaleHeads [1].sprite;
+				GameObject.Find ("Head").GetComponent<SpriteRenderer> ().sprite = femaleHeads [1];
 			}
 			else if (randomHead == 2)
 			{
-				myHead.sprite = femaleHeads [2].sprite;
+				GameObject.Find ("Head").GetComponent<SpriteRenderer> ().sprite = femaleHeads [2];
+			}
+
+			// body
+			int randomBody = Random.Range (0, 3);
+
+			print ("female body " + (randomBody + 1));
+
+			if (randomBody == 0)
+			{
+				GameObject.Find ("Body").GetComponent<SpriteRenderer> ().sprite = femaleBodies [0];
+			}
+			else if (randomBody == 1)
+			{
+				GameObject.Find ("Body").GetComponent<SpriteRenderer> ().sprite = femaleBodies [1];
+			}
+			else if (randomBody == 2)
+			{
+				GameObject.Find ("Body").GetComponent<SpriteRenderer> ().sprite = femaleBodies [2];
 			}
 		}
-		else if(maleOrFemale >= 5)
+		else if(maleOrFemale >= 5) // male
 		{
+			// head
+			int randomHead = Random.Range (0, 3);
 
+			print ("male head " + (randomHead+1));
+
+			if (randomHead == 0)
+			{
+				GameObject.Find ("Head").GetComponent<SpriteRenderer> ().sprite = maleHeads [0];
+			}
+			else if (randomHead == 1)
+			{
+				GameObject.Find ("Head").GetComponent<SpriteRenderer> ().sprite = maleHeads [1];
+			}
+			else if (randomHead == 2)
+			{
+				GameObject.Find ("Head").GetComponent<SpriteRenderer> ().sprite = maleHeads [2];
+			}
+
+			// body
+			int randomBody = Random.Range (0, 3);
+
+			print ("male body " + (randomBody + 1));
+
+			if (randomBody == 0)
+			{
+				GameObject.Find ("Body").GetComponent<SpriteRenderer> ().sprite = maleBodies [0];
+			}
+			else if (randomBody == 1)
+			{
+				GameObject.Find ("Body").GetComponent<SpriteRenderer> ().sprite = maleBodies [1];
+			}
+			else if (randomBody == 2)
+			{
+				GameObject.Find ("Body").GetComponent<SpriteRenderer> ().sprite = maleBodies [2];
+			}
 		}
 
 	}

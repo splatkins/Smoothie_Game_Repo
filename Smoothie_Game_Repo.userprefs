@@ -5,8 +5,8 @@
       <File FileName="Assets\Scripts\S_SpawnEnvironment.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\S_InventoryManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\S_CameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\S_CuttingStationControls.cs" Line="126" Column="8" />
-      <File FileName="Assets\Scripts\S_CustomerGeneration.cs" Line="45" Column="11" />
+      <File FileName="Assets\Scripts\S_CuttingStationControls.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\S_CustomerGeneration.cs" Line="28" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
