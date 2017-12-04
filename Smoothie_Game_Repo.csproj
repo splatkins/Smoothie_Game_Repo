@@ -79,6 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\S_CameraController.cs" />
+    <Compile Include="Assets\Scripts\S_CustomerGeneration.cs" />
+    <Compile Include="Assets\Scripts\S_CustomerSpawn.cs" />
     <Compile Include="Assets\Scripts\S_CuttingStationControls.cs" />
     <Compile Include="Assets\Scripts\S_InventoryManager.cs" />
     <Compile Include="Assets\Scripts\S_SpawnEnvironment.cs" />

@@ -39,37 +39,38 @@ public class S_CustomerGeneration : MonoBehaviour
 			// head
 			int randomHead = Random.Range (0, 3);
 
-			print ("female head " + (randomHead + 1));
+			//print ("female head " + (randomHead + 1));
 
 			if (randomHead == 0)
 			{
-				GameObject.Find ("Head").GetComponent<SpriteRenderer> ().sprite = femaleHeads [0];
+				this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = femaleHeads [0];
+				//GameObject.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = femaleHeads [0];
 			}
 			else if (randomHead == 1)
 			{
-				GameObject.Find ("Head").GetComponent<SpriteRenderer> ().sprite = femaleHeads [1];
+				this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = femaleHeads [1];
 			}
 			else if (randomHead == 2)
 			{
-				GameObject.Find ("Head").GetComponent<SpriteRenderer> ().sprite = femaleHeads [2];
+				this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = femaleHeads [2];
 			}
 
 			// body
 			int randomBody = Random.Range (0, 3);
 
-			print ("female body " + (randomBody + 1));
+			print ("female body " + (randomHead + 1) + " female head " + (randomBody + 1));
 
 			if (randomBody == 0)
 			{
-				GameObject.Find ("Body").GetComponent<SpriteRenderer> ().sprite = femaleBodies [0];
+				this.transform.Find ("Body").GetComponentInChildren<SpriteRenderer> ().sprite = femaleBodies [0];
 			}
 			else if (randomBody == 1)
 			{
-				GameObject.Find ("Body").GetComponent<SpriteRenderer> ().sprite = femaleBodies [1];
+				this.transform.Find ("Body").GetComponentInChildren<SpriteRenderer> ().sprite = femaleBodies [1];
 			}
 			else if (randomBody == 2)
 			{
-				GameObject.Find ("Body").GetComponent<SpriteRenderer> ().sprite = femaleBodies [2];
+				this.transform.Find ("Body").GetComponentInChildren<SpriteRenderer> ().sprite = femaleBodies [2];
 			}
 		}
 		else if(maleOrFemale >= 5) // male
@@ -77,37 +78,37 @@ public class S_CustomerGeneration : MonoBehaviour
 			// head
 			int randomHead = Random.Range (0, 3);
 
-			print ("male head " + (randomHead+1));
+			//print ("male head " + (randomHead+1));
 
 			if (randomHead == 0)
 			{
-				GameObject.Find ("Head").GetComponent<SpriteRenderer> ().sprite = maleHeads [0];
+				this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = maleHeads [0];
 			}
 			else if (randomHead == 1)
 			{
-				GameObject.Find ("Head").GetComponent<SpriteRenderer> ().sprite = maleHeads [1];
+				this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = maleHeads [1];
 			}
 			else if (randomHead == 2)
 			{
-				GameObject.Find ("Head").GetComponent<SpriteRenderer> ().sprite = maleHeads [2];
+				this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = maleHeads [2];
 			}
 
 			// body
 			int randomBody = Random.Range (0, 3);
 
-			print ("male body " + (randomBody + 1));
+			print ("male body " + (randomHead + 1) + " male head " + (randomBody + 1));
 
 			if (randomBody == 0)
 			{
-				GameObject.Find ("Body").GetComponent<SpriteRenderer> ().sprite = maleBodies [0];
+				this.transform.Find ("Body").GetComponentInChildren<SpriteRenderer> ().sprite = maleBodies [0];
 			}
 			else if (randomBody == 1)
 			{
-				GameObject.Find ("Body").GetComponent<SpriteRenderer> ().sprite = maleBodies [1];
+				this.transform.Find ("Body").GetComponentInChildren<SpriteRenderer> ().sprite = maleBodies [1];
 			}
 			else if (randomBody == 2)
 			{
-				GameObject.Find ("Body").GetComponent<SpriteRenderer> ().sprite = maleBodies [2];
+				this.transform.Find ("Body").GetComponentInChildren<SpriteRenderer> ().sprite = maleBodies [2];
 			}
 		}
 
