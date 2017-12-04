@@ -26,7 +26,6 @@ public class S_CustomerSpawn : MonoBehaviour
 
 		if (currentCustomers < numberOfCustomers)
 		{
-			
 			switch (randomSpawnPoint)
 			{
 
@@ -37,7 +36,7 @@ public class S_CustomerSpawn : MonoBehaviour
 				}
 				spawnPoint = customerSpawnPoints [5];
 				spawn6InUse = true;
-				Instantiate (customer, spawnPoint, Quaternion.identity);
+				Instantiate (customer, spawnPoint, Quaternion.identity, GameObject.Find ("Environment").GetComponent<Transform>());
 				currentCustomers++;
 				break;
 			case 4:
@@ -47,7 +46,7 @@ public class S_CustomerSpawn : MonoBehaviour
 				}
 				spawnPoint = customerSpawnPoints [4];
 				spawn5InUse = true;
-				Instantiate (customer, spawnPoint, Quaternion.identity);
+				Instantiate (customer, spawnPoint, Quaternion.identity, GameObject.Find ("Environment").GetComponent<Transform>());
 				currentCustomers++;
 				break;
 			case 3:
@@ -57,7 +56,7 @@ public class S_CustomerSpawn : MonoBehaviour
 				}
 				spawnPoint = customerSpawnPoints [3];
 				spawn4InUse = true;
-				Instantiate (customer, spawnPoint, Quaternion.identity);
+				Instantiate (customer, spawnPoint, Quaternion.identity, GameObject.Find ("Environment").GetComponent<Transform>());
 				currentCustomers++;
 				break;
 			case 2:
@@ -67,7 +66,7 @@ public class S_CustomerSpawn : MonoBehaviour
 				}
 				spawnPoint = customerSpawnPoints [2];
 				spawn3InUse = true;
-				Instantiate (customer, spawnPoint, Quaternion.identity);
+				Instantiate (customer, spawnPoint, Quaternion.identity, GameObject.Find ("Environment").GetComponent<Transform>());
 				currentCustomers++;
 				break;
 			case 1:
@@ -77,7 +76,7 @@ public class S_CustomerSpawn : MonoBehaviour
 				}
 				spawnPoint = customerSpawnPoints [1];
 				spawn2InUse = true;
-				Instantiate (customer, spawnPoint, Quaternion.identity);
+				Instantiate (customer, spawnPoint, Quaternion.identity, GameObject.Find ("Environment").GetComponent<Transform>());
 				currentCustomers++;
 				break;
 			case 0:
@@ -87,15 +86,15 @@ public class S_CustomerSpawn : MonoBehaviour
 				}
 				spawnPoint = customerSpawnPoints [0];
 				spawn1InUse = true;
-				Instantiate (customer, spawnPoint, Quaternion.identity);
+				Instantiate (customer, spawnPoint, Quaternion.identity, GameObject.Find ("Environment").GetComponent<Transform>());
 				currentCustomers++;
 				break;
 			default:
-				print ("Customer did not spawn");
+				//print ("Customer did not spawn");
 				break;
 			}
 				
-			print ("spawn point " + spawnPoint);
+			//print ("spawn point " + spawnPoint);
 		}
 	}
 }

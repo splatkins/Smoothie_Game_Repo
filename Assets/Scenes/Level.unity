@@ -2209,6 +2209,34 @@ Transform:
   m_Father: {fileID: 1140761646}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &330087690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 330087691}
+  m_Layer: 0
+  m_Name: Screens
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &330087691
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 330087690}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3877306, y: 0.6317768, z: -0.3545313}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &344797094
 GameObject:
   m_ObjectHideFlags: 0
@@ -13641,6 +13669,7 @@ GameObject:
   - component: {fileID: 1842755324}
   - component: {fileID: 1842755326}
   - component: {fileID: 1842755327}
+  - component: {fileID: 1842755328}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -13724,7 +13753,6 @@ MonoBehaviour:
   - {x: 9.53, y: 0, z: 9.39}
   - {x: 14.2, y: 0, z: 8.53}
   - {x: 13.48, y: 0, z: 5.55}
-  - {x: 13.09, y: 0, z: 2.95}
 --- !u!114 &1842755327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13738,6 +13766,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enviroment: {fileID: 0}
   cuttingStation: {fileID: 0}
+--- !u!114 &1842755328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1842755323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d86f7e6ebca6b24290b6b9030fa8a0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barPoints:
+  - {x: 0.11, y: 0, z: 5.9}
+  - {x: 1.26, y: 0, z: 4.78}
+  - {x: 2.23, y: 0, z: 3.71}
+  - {x: 3.29, y: 0, z: 2.66}
+  - {x: 4.32, y: 0, z: 1.68}
+  - {x: 5.31, y: 0, z: 0.7}
+  barPoint6InUse: 0
+  barPoint5InUse: 0
+  barPoint4InUse: 0
+  barPoint3InUse: 0
+  barPoint2InUse: 0
+  barPoint1InUse: 0
 --- !u!1 &1878065447
 GameObject:
   m_ObjectHideFlags: 0

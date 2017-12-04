@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{FF00AE56-BD96-4EEF-3B1E-AFA406BAF554}</ProjectGuid>
+    <ProjectGuid>{73D3B6DF-7181-DAA0-5D03-48C82094A362}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\S_BarController.cs" />
      <Compile Include="Assets\Scripts\S_CameraController.cs" />
      <Compile Include="Assets\Scripts\S_CustomerGeneration.cs" />
      <Compile Include="Assets\Scripts\S_CustomerMovement.cs" />

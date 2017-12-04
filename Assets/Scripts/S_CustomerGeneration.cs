@@ -58,7 +58,7 @@ public class S_CustomerGeneration : MonoBehaviour
 			// body
 			int randomBody = Random.Range (0, 3);
 
-			print ("female body " + (randomHead + 1) + " female head " + (randomBody + 1));
+		//	print ("female body " + (randomHead + 1) + " female head " + (randomBody + 1));
 
 			if (randomBody == 0)
 			{
@@ -96,7 +96,7 @@ public class S_CustomerGeneration : MonoBehaviour
 			// body
 			int randomBody = Random.Range (0, 3);
 
-			print ("male body " + (randomHead + 1) + " male head " + (randomBody + 1));
+		//	print ("male body " + (randomHead + 1) + " male head " + (randomBody + 1));
 
 			if (randomBody == 0)
 			{
