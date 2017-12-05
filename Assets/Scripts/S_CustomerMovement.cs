@@ -108,6 +108,6 @@ public class S_CustomerMovement : MonoBehaviour
 			}
 		}
 
-		print ("chosen bar point " + chosenBarPoint);
+		//print ("chosen bar point " + chosenBarPoint);
 	}
 }
