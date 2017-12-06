@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{73D3B6DF-7181-DAA0-5D03-48C82094A362}</ProjectGuid>
+    <ProjectGuid>{FF00AE56-BD96-4EEF-3B1E-AFA406BAF554}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\S_CuttingStationControls.cs" />
      <Compile Include="Assets\Scripts\S_InventoryManager.cs" />
      <Compile Include="Assets\Scripts\S_SpawnEnvironment.cs" />
+     <Compile Include="Assets\Scripts\S_UI.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
