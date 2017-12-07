@@ -56,7 +56,17 @@ public class S_CameraController : MonoBehaviour
 				CameraControls ();
 			}
 		}
+
+		//AssignCameras ();
 	}
+
+//	void AssignCameras()
+//	{
+//		
+//		cuttingStationCam = GameObject.Find ("CutingStationCamera").GetComponent<Camera> ();
+//		blendingStationCam = GameObject.Find ("BlendingStationCamera").GetComponent<Camera> ();
+//		shakingStationCam = GameObject.Find ("ShakingStationCamera").GetComponent<Camera> ();
+//	}
 
 	void CameraControls()
 	{

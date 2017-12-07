@@ -16,6 +16,14 @@ public class S_BarController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		
+//		if (this.enabled == false)
+//		{
+//			barPoint1InUse = false;
+//			barPoint2InUse = false;
+//			barPoint3InUse = false;
+//			barPoint4InUse = false;
+//			barPoint5InUse = false;
+//			barPoint6InUse = false;
+//		}
 	}
 }

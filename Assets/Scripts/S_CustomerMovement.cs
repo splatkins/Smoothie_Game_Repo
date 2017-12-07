@@ -5,6 +5,7 @@ using UnityEngine;
 public class S_CustomerMovement : MonoBehaviour
 {
 	bool doorReached, gotABarPoint;
+	public bool barReached;
 
 	public Vector3 doorPosition = new Vector3 ();
 
@@ -38,6 +39,7 @@ public class S_CustomerMovement : MonoBehaviour
 		if (doorReached == true)
 		{
 			transform.position = Vector3.MoveTowards (transform.position, chosenBarPoint, step);
+			barReached = true;
 		}
 	}
 

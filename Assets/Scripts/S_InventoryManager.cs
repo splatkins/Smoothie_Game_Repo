@@ -9,12 +9,16 @@ public class S_InventoryManager : MonoBehaviour
 	public int currentStrawberries = 0;
 	public int currentBananas = 0;
 	public int currentOranges = 0;
+	public int currentIce = 0;
 
 	// current sliced/peeled ingredients
+	public int currentPeeledLemons = 0;
 	public int currentSlicedLemons = 0;
-	public int currentSlicedStrawberries = 0;
 	public int currentPeeledBananas = 0;
+	public int currentSlicedBananas = 0;
 	public int currentPeeledOranges = 0;
+	public int currentSlicedOranges = 0;
+	public int currentSlicedStrawberries = 0;
 
 	// whole ingredients
 	public GameObject lemons1;
@@ -29,6 +33,7 @@ public class S_InventoryManager : MonoBehaviour
 	public GameObject oranges1;
 	public GameObject oranges2;
 	public GameObject oranges3;
+	public GameObject ice;
 
 	// sliced/peeled ingredients
 	public GameObject slicedLemons1;
