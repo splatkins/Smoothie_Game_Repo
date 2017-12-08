@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class S_CuttingStationControls : MonoBehaviour
 {
+	public GameObject gameManager;
+
 	Ray ray;
 	RaycastHit hit;
 	private float knifeMinX, knifeMaxX, knifeMinY, knifeMaxY, knifeMinZ, knifeMaxZ;
@@ -14,28 +16,34 @@ public class S_CuttingStationControls : MonoBehaviour
 	public GameObject pickedUp;
 	public GameObject onBoard;
 	public GameObject lemon;
-	public GameObject strawberry;
 	public GameObject banana;
 	public GameObject orange;
+	public GameObject strawberry;
 
-	public GameObject slicedLemon;
-	public GameObject slicedStrawberry;
+	public GameObject peeledLemon;
 	public GameObject peeledBanana;
 	public GameObject peeledOrange;
+	public GameObject peeledStrawberry;
+
+	public GameObject slicedLemon;
+	public GameObject slicedBanana;
+	public GameObject slicedOrange;
+	public GameObject slicedStrawberry;
 
 	public Transform dropPosition;
 	public Transform lemonStart;
-	public Transform strawberryStart;
 	public Transform bananaStart;
 	public Transform orangeStart;
+	public Transform strawberryStart;
 
 	public GameObject clearButton;
 	public GameObject sliceButton;
 	public GameObject peelButton;
 
-	bool slicing;
+
 	public GameObject knife;
 	public Transform knifeStartPosition;
+	bool slicing;
 	GameObject sliced;
 
 	public bool peeling;
@@ -81,16 +89,6 @@ public class S_CuttingStationControls : MonoBehaviour
 						GameObject.Find("InventoryManager").GetComponent<S_InventoryManager>().currentLemons--;
 					}
 
-					if (hit.transform.tag == "StrawberryBowl" && pickedSomethingUp == false && GameObject.Find("InventoryManager").GetComponent<S_InventoryManager>().currentStrawberries > 0)
-					{
-						print ("Picked up strawberry");
-						pickedUp = Instantiate (strawberry, new Vector3 (strawberryStart.transform.position.x, strawberryStart.transform.position.y, strawberryStart.transform.position.z), Quaternion.identity);
-						pickedSomethingUp = true;
-
-						// minus 1 strawberry from inventory
-						GameObject.Find("InventoryManager").GetComponent<S_InventoryManager>().currentStrawberries--;
-					}
-
 					if (hit.transform.tag == "BananaBowl" && pickedSomethingUp == false && GameObject.Find("InventoryManager").GetComponent<S_InventoryManager>().currentBananas > 0)
 					{
 						print ("Picked up banana");
@@ -111,26 +109,26 @@ public class S_CuttingStationControls : MonoBehaviour
 						GameObject.Find("InventoryManager").GetComponent<S_InventoryManager>().currentOranges--;
 					}
 
-					// slicing ingredient on board
-					if (hit.transform.tag == "Lemon" && slicing == true)
+					if (hit.transform.tag == "StrawberryBowl" && pickedSomethingUp == false && GameObject.Find("InventoryManager").GetComponent<S_InventoryManager>().currentStrawberries > 0)
 					{
-						print ("Sliced lemon");
+						print ("Picked up strawberry");
+						pickedUp = Instantiate (strawberry, new Vector3 (strawberryStart.transform.position.x, strawberryStart.transform.position.y, strawberryStart.transform.position.z), Quaternion.identity);
+						pickedSomethingUp = true;
 
-						sliced = Instantiate(slicedLemon, new Vector3 (dropPosition.transform.position.x, dropPosition.transform.position.y, dropPosition.transform.position.z), Quaternion.Euler (new Vector3 (-90, 0, 45)));
-						Destroy (onBoard);
-						onBoard = sliced;
-					}
-
-					if (hit.transform.tag == "Strawberry" && slicing == true)
-					{
-						print ("Sliced strawberry");
-
-						sliced = Instantiate(slicedStrawberry, new Vector3 (dropPosition.transform.position.x, dropPosition.transform.position.y, dropPosition.transform.position.z), Quaternion.Euler (new Vector3 (-90, 0, 45)));
-						Destroy (onBoard);
-						onBoard = sliced;
+						// minus 1 strawberry from inventory
+						GameObject.Find("InventoryManager").GetComponent<S_InventoryManager>().currentStrawberries--;
 					}
 
 					// check to see if peelable ingredient tapped
+					if (hit.transform.tag == "Lemon" && peeling == true)
+					{
+						print ("Peeled lemon");
+
+						peeled = Instantiate(peeledLemon, new Vector3 (dropPosition.transform.position.x, dropPosition.transform.position.y, dropPosition.transform.position.z), Quaternion.Euler (new Vector3 (-90, 0, 45)));
+						Destroy (onBoard);
+						onBoard = peeled;
+					}
+
 					if (hit.transform.tag == "Banana" && peeling == true)
 					{
 						print ("Peeled banana");
@@ -149,6 +147,52 @@ public class S_CuttingStationControls : MonoBehaviour
 						onBoard = peeled;
 					}
 
+					if (hit.transform.tag == "Strawberry" && peeling == true)
+					{
+						print ("Peeled strawberry");
+
+						peeled = Instantiate(peeledStrawberry, new Vector3 (dropPosition.transform.position.x, dropPosition.transform.position.y, dropPosition.transform.position.z), Quaternion.Euler (new Vector3 (-90, 0, 45)));
+						Destroy (onBoard);
+						onBoard = peeled;
+					}
+						
+					// slicing ingredient on board
+					if (hit.transform.tag == "LemonPeeled" && slicing == true)
+					{
+						print ("Sliced lemon");
+
+						sliced = Instantiate(slicedLemon, new Vector3 (dropPosition.transform.position.x, dropPosition.transform.position.y, dropPosition.transform.position.z), Quaternion.Euler (new Vector3 (-90, 0, 45)));
+						Destroy (onBoard);
+						onBoard = sliced;
+					}
+
+					if (hit.transform.tag == "BananaPeeled" && slicing == true)
+					{
+						print ("Sliced banana");
+
+						sliced = Instantiate(slicedBanana, new Vector3 (dropPosition.transform.position.x, dropPosition.transform.position.y, dropPosition.transform.position.z), Quaternion.Euler (new Vector3 (-90, 0, 45)));
+						Destroy (onBoard);
+						onBoard = sliced;
+					}
+
+					if (hit.transform.tag == "OrangePeeled" && slicing == true)
+					{
+						print ("Sliced orange");
+
+						sliced = Instantiate(slicedOrange, new Vector3 (dropPosition.transform.position.x, dropPosition.transform.position.y, dropPosition.transform.position.z), Quaternion.Euler (new Vector3 (-90, 0, 45)));
+						Destroy (onBoard);
+						onBoard = sliced;
+					}
+
+					if (hit.transform.tag == "StrawberryPeeled" && slicing == true)
+					{
+						print ("Sliced strawberry");
+
+						sliced = Instantiate(slicedStrawberry, new Vector3 (dropPosition.transform.position.x, dropPosition.transform.position.y, dropPosition.transform.position.z), Quaternion.Euler (new Vector3 (-90, 0, 45)));
+						Destroy (onBoard);
+						onBoard = sliced;
+					}
+						
 					if (hit.transform.tag == "CuttingBoard" && slicing == true)
 					{
 						knife.transform.position = new Vector3 (touchedPos.x, touchedPos.y, touchedPos.z); // move knife
@@ -173,9 +217,6 @@ public class S_CuttingStationControls : MonoBehaviour
 						}
 					}
 				}
-
-
-
 			}
 
 			// check if finger taken off of the screen, if so drop current picked up object
@@ -188,11 +229,6 @@ public class S_CuttingStationControls : MonoBehaviour
 						GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentLemons++; // add one back to lemon count
 					}
 
-					if (pickedUp.transform.tag == "Strawberry") // and it is a strawberry
-					{
-						GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentStrawberries++; // add one back to lemon count
-					}
-
 					if (pickedUp.transform.tag == "Banana") // and it is a banana
 					{
 						GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentBananas++; // add one back to lemon count
@@ -201,6 +237,11 @@ public class S_CuttingStationControls : MonoBehaviour
 					if (pickedUp.transform.tag == "Orange") // and it is a orange
 					{
 						GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentOranges++; // add one back to lemon count
+					}
+
+					if (pickedUp.transform.tag == "Strawberry") // and it is a strawberry
+					{
+						GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentStrawberries++; // add one back to lemon count
 					}
 
 					Destroy (pickedUp);
@@ -213,16 +254,16 @@ public class S_CuttingStationControls : MonoBehaviour
 			{
 				clearButton.SetActive (true);
 
-				// activate slice button
-				if (onBoard.transform.tag == "Lemon" || onBoard.transform.tag == "Strawberry")
-				{
-					sliceButton.SetActive (true);
-				}
-
 				// activate peel button
-				if (onBoard.transform.tag == "Banana" || onBoard.transform.tag == "Orange")
+				if (onBoard.transform.tag == "Lemon" || onBoard.transform.tag == "Banana" || onBoard.transform.tag == "Orange" || onBoard.transform.tag == "Strawberry")
 				{
 					peelButton.SetActive (true);
+				}
+
+				// activate slice button
+				if (onBoard.transform.tag == "LemonPeeled" || onBoard.transform.tag == "BananaPeeled" || onBoard.transform.tag == "OrangePeeled" || onBoard.transform.tag == "StrawberryPeeled")
+				{
+					sliceButton.SetActive (true);
 				}
 			}
 			else
@@ -237,20 +278,16 @@ public class S_CuttingStationControls : MonoBehaviour
 		if (slicing == false)
 		{
 			//print ("Deactivate knife");
-			knife.transform.position = new Vector3 (knifeStartPosition.transform.position.x, knifeStartPosition.position.y, knifeStartPosition.position.z);
+			knife.transform.position = new Vector3 (knifeStartPosition.transform.position.x, knifeStartPosition.position.y, knifeStartPosition.position.z); // put knife down
 		}
 	}
 
 	public void ClearBoard ()
 	{
+		// whole ingredients
 		if (onBoard.transform.tag == "Lemon") // and it is a lemon
 		{
 			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentLemons++; // add one back to lemon count
-		}
-
-		if (onBoard.transform.tag == "Strawberry") // and it is a strawberry
-		{
-			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentStrawberries++; // add one back to lemon count
 		}
 
 		if (onBoard.transform.tag == "Banana") // and it is a banana
@@ -262,26 +299,55 @@ public class S_CuttingStationControls : MonoBehaviour
 		{
 			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentOranges++; // add one back to lemon count
 		}
-
-		if (onBoard.transform.tag == "SlicedLemon") // and it is a sliced lemon
+			
+		if (onBoard.transform.tag == "Strawberry") // and it is a strawberry
 		{
-			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentSlicedLemons++; // add one to sliced lemon count
+			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentStrawberries++; // add one back to lemon count
 		}
 
-		if (onBoard.transform.tag == "SlicedStrawberry") // and it is a sliced strawberry
+		// peeled ingredients
+		if (onBoard.transform.tag == "LemonPeeled") // and it is a peeled lemon
 		{
-			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentSlicedStrawberries++; // add one to sliced strawberries count
+			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentPeeledLemons++; // add one to peeled bananas count
 		}
 
-		if (onBoard.transform.tag == "PeeledBanana") // and it is a peeled banana
+		if (onBoard.transform.tag == "BananaPeeled") // and it is a peeled banana
 		{
 			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentPeeledBananas++; // add one to peeled bananas count
 		}
 
-		if (onBoard.transform.tag == "PeeledOrange") // and it is a sliced strawberry
+		if (onBoard.transform.tag == "OrangePeeled") // and it is a peeled orange
 		{
 			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentPeeledOranges++; // add one to peeled oranges count
 		}
+
+		if (onBoard.transform.tag == "StrawberryPeeled") // and it is a peeled strawberry
+		{
+			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentPeeledStrawberries++; // add one to peeled bananas count
+		}
+
+		// sliced ingredients
+		if (onBoard.transform.tag == "LemonSliced") // and it is a sliced lemon
+		{
+			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentSlicedLemons++; // add one to sliced lemon count
+		}
+
+		if (onBoard.transform.tag == "BananaSliced") // and it is a sliced banana
+		{
+			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentSlicedBananas++; // add one to sliced lemon count
+		}
+
+		if (onBoard.transform.tag == "OrangedSliced") // and it is a sliced orange
+		{
+			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentSlicedOranges++; // add one to sliced lemon count
+		}
+
+		if (onBoard.transform.tag == "StrawberrySliced") // and it is a sliced strawberry
+		{
+			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentSlicedStrawberries++; // add one to sliced strawberries count
+		}
+
+
 
 		Destroy (onBoard);
 		onBoard = null;

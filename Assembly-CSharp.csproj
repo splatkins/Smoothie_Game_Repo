@@ -59,7 +59,6 @@
      <Compile Include="Assets\Scripts\S_CustomerSpawn.cs" />
      <Compile Include="Assets\Scripts\S_CuttingStationControls.cs" />
      <Compile Include="Assets\Scripts\S_InventoryManager.cs" />
-     <Compile Include="Assets\Scripts\S_InventoryManagerNew.cs" />
      <Compile Include="Assets\Scripts\S_SpawnEnvironment.cs" />
      <Compile Include="Assets\Scripts\S_UI.cs" />
  <Reference Include="UnityEngine.UI">

@@ -6,9 +6,9 @@ public class S_InventoryManager : MonoBehaviour
 {
 	// current whole ingredients
 	public int currentLemons = 0;
-	public int currentStrawberries = 0;
 	public int currentBananas = 0;
 	public int currentOranges = 0;
+	public int currentStrawberries = 0;
 	public int currentIce = 0;
 
 	// current sliced/peeled ingredients
@@ -18,112 +18,126 @@ public class S_InventoryManager : MonoBehaviour
 	public int currentSlicedBananas = 0;
 	public int currentPeeledOranges = 0;
 	public int currentSlicedOranges = 0;
+	public int currentPeeledStrawberries = 0;
 	public int currentSlicedStrawberries = 0;
 
-	// whole ingredients
-	public GameObject lemons1;
-	public GameObject lemons2;
-	public GameObject lemons3;
-	public GameObject strawberries1;
-	public GameObject strawberries2;
-	public GameObject strawberries3;
-	public GameObject bananas1;
-	public GameObject bananas2;
-	public GameObject bananas3;
-	public GameObject oranges1;
-	public GameObject oranges2;
-	public GameObject oranges3;
-	public GameObject ice;
+	// whole ingredients prefabs
+//	public GameObject lemon;
+//	public GameObject banana;
+//	public GameObject orange;
+//	public GameObject strawberry;
+//	public GameObject ice;
+	public GameObject lemon1;
+	public GameObject lemon2;
+	public GameObject lemon3;
+	public GameObject lemon4;
+	public GameObject lemon5;
+	public GameObject banana1;
+	public GameObject banana2;
+	public GameObject banana3;
+	public GameObject banana4;
+	public GameObject banana5;
+	public GameObject orange1;
+	public GameObject orange2;
+	public GameObject orange3;
+	public GameObject orange4;
+	public GameObject orange5;
+	public GameObject strawberry1;
+	public GameObject strawberry2;
+	public GameObject strawberry3;
+	public GameObject strawberry4;
+	public GameObject strawberry5;
 
-	// sliced/peeled ingredients
-	public GameObject slicedLemons1;
-	public GameObject slicedLemons2;
-	public GameObject slicedLemons3;
-	public GameObject slicedStrawberries1;
-	public GameObject slicedStrawberries2;
-	public GameObject slicedStrawberries3;
-	public GameObject peeledBananas1;
-	public GameObject peeledBananas2;
-	public GameObject peeledBananas3;
-	public GameObject peeledOranges1;
-	public GameObject peeledOranges2;
-	public GameObject peeledOranges3;
+	//peeled ingredients prefabs
+//	public GameObject peeledLemon;
+//	public GameObject peeledBanana;
+//	public GameObject peeledOrange;
+//	public GameObject peeledStrawberry;
+
+
+	// sliced ingredients prefabs
+//	public GameObject lemonSlice;
+//	public GameObject bananaSlice;
+//	public GameObject orangeSlice;
+//	public GameObject strawberrySlice;
 
 	// Use this for initialization
 	void Start ()
 	{
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
 	{
 		// show current whole ingredients
 		ShowLemons ();
-		ShowStrawberries ();
 		ShowBananas ();
 		ShowOranges ();
+		ShowStrawberries ();
 
-		// display current sliced/peeled ingredients
-		ShowSlicedLemons ();
-		ShowSlicedStrawberries ();
+		// display current peeled ingredients
+		ShowPeeledLemons ();
 		ShowPeeledBananas ();
 		ShowPeeledOranges ();
+		ShowPeeledStrawberries ();
+
+		// display current sliced ingredients
+		ShowSlicedLemons ();
+		ShowSlicedBananas ();
+		ShowSlicedOranges ();
+		ShowSlicedStrawberries ();
 	}
 
 	void ShowLemons()
 	{
 		if (currentLemons == 0)
 		{
-			lemons1.SetActive(false);
-			lemons2.SetActive(false);
-			lemons3.SetActive(false);
+			lemon1.SetActive (false);
+			lemon2.SetActive (false);
+			lemon3.SetActive (false);
+			lemon4.SetActive (false);
+			lemon5.SetActive (false);
 		}
 		else if (currentLemons == 1)
 		{
-			lemons1.SetActive(true);
-			lemons2.SetActive(false);
-			lemons3.SetActive(false);
+			lemon1.SetActive (true);
+			lemon2.SetActive (false);
+			lemon3.SetActive (false);
+			lemon4.SetActive (false);
+			lemon5.SetActive (false);
 		}
 		else if (currentLemons == 2)
 		{
-			lemons1.SetActive(false);
-			lemons2.SetActive(true);
-			lemons3.SetActive(false);
+			lemon1.SetActive (true);
+			lemon2.SetActive (true);
+			lemon3.SetActive (false);
+			lemon4.SetActive (false);
+			lemon5.SetActive (false);
 		}
-		else if (currentLemons >= 3)
+		else if (currentLemons == 3)
 		{
-			lemons1.SetActive(false);
-			lemons2.SetActive(false);
-			lemons3.SetActive(true);
+			lemon1.SetActive (true);
+			lemon2.SetActive (true);
+			lemon3.SetActive (true);
+			lemon4.SetActive (false);
+			lemon5.SetActive (false);
 		}
-	}
-
-	void ShowStrawberries()
-	{
-		if (currentStrawberries == 0)
+		else if (currentLemons == 4)
 		{
-			strawberries1.SetActive(false);
-			strawberries2.SetActive(false);
-			strawberries3.SetActive(false);
+			lemon1.SetActive (true);
+			lemon2.SetActive (true);
+			lemon3.SetActive (true);
+			lemon4.SetActive (true);
+			lemon5.SetActive (false);
 		}
-		else if (currentStrawberries == 1)
+		else if (currentLemons >= 5)
 		{
-			strawberries1.SetActive(true);
-			strawberries2.SetActive(false);
-			strawberries3.SetActive(false);
-		}
-		else if (currentStrawberries == 2)
-		{
-			strawberries1.SetActive(false);
-			strawberries2.SetActive(true);
-			strawberries3.SetActive(false);
-		}
-		else if (currentStrawberries >= 3)
-		{
-			strawberries1.SetActive(false);
-			strawberries2.SetActive(false);
-			strawberries3.SetActive(true);
+			lemon1.SetActive (true);
+			lemon2.SetActive (true);
+			lemon3.SetActive (true);
+			lemon4.SetActive (true);
+			lemon5.SetActive (true);
 		}
 	}
 
@@ -131,27 +145,51 @@ public class S_InventoryManager : MonoBehaviour
 	{
 		if (currentBananas == 0)
 		{
-			bananas1.SetActive(false);
-			bananas2.SetActive(false);
-			bananas3.SetActive(false);
+			banana1.SetActive (false);
+			banana2.SetActive (false);
+			banana3.SetActive (false);
+			banana4.SetActive (false);
+			banana5.SetActive (false);
 		}
 		else if (currentBananas == 1)
 		{
-			bananas1.SetActive(true);
-			bananas2.SetActive(false);
-			bananas3.SetActive(false);
+			banana1.SetActive (true);
+			banana2.SetActive (false);
+			banana3.SetActive (false);
+			banana4.SetActive (false);
+			banana5.SetActive (false);
 		}
 		else if (currentBananas == 2)
 		{
-			bananas1.SetActive(false);
-			bananas2.SetActive(true);
-			bananas3.SetActive(false);
+			banana1.SetActive (true);
+			banana2.SetActive (true);
+			banana3.SetActive (false);
+			banana4.SetActive (false);
+			banana5.SetActive (false);
 		}
-		else if (currentBananas >= 3)
+		else if (currentBananas == 3)
 		{
-			bananas1.SetActive(false);
-			bananas2.SetActive(false);
-			bananas3.SetActive(true);
+			banana1.SetActive (true);
+			banana2.SetActive (true);
+			banana3.SetActive (true);
+			banana4.SetActive (false);
+			banana5.SetActive (false);
+		}
+		else if (currentBananas == 4)
+		{
+			banana1.SetActive (true);
+			banana2.SetActive (true);
+			banana3.SetActive (true);
+			banana4.SetActive (true);
+			banana5.SetActive (false);
+		}
+		else if (currentBananas >= 5)
+		{
+			banana1.SetActive (true);
+			banana2.SetActive (true);
+			banana3.SetActive (true);
+			banana4.SetActive (true);
+			banana5.SetActive (true);
 		}
 	}
 
@@ -159,83 +197,131 @@ public class S_InventoryManager : MonoBehaviour
 	{
 		if (currentOranges == 0)
 		{
-			oranges1.SetActive(false);
-			oranges2.SetActive(false);
-			oranges3.SetActive(false);
+			orange1.SetActive (false);
+			orange2.SetActive (false);
+			orange3.SetActive (false);
+			orange4.SetActive (false);
+			orange5.SetActive (false);
 		}
 		else if (currentOranges == 1)
 		{
-			oranges1.SetActive(true);
-			oranges2.SetActive(false);
-			oranges3.SetActive(false);
+			orange1.SetActive (true);
+			orange2.SetActive (false);
+			orange3.SetActive (false);
+			orange4.SetActive (false);
+			orange5.SetActive (false);
 		}
 		else if (currentOranges == 2)
 		{
-			oranges1.SetActive(false);
-			oranges2.SetActive(true);
-			oranges3.SetActive(false);
+			orange1.SetActive (true);
+			orange2.SetActive (true);
+			orange3.SetActive (false);
+			orange4.SetActive (false);
+			orange5.SetActive (false);
 		}
-		else if (currentOranges >= 3)
+		else if (currentOranges == 3)
 		{
-			oranges1.SetActive(false);
-			oranges2.SetActive(false);
-			oranges3.SetActive(true);
+			orange1.SetActive (true);
+			orange2.SetActive (true);
+			orange3.SetActive (true);
+			orange4.SetActive (false);
+			orange5.SetActive (false);
 		}
-	}
-		
-	void ShowSlicedLemons()
-	{
-		if (currentSlicedLemons == 0)
+		else if (currentOranges == 4)
 		{
-			slicedLemons1.SetActive(false);
-			slicedLemons2.SetActive(false);
-			slicedLemons3.SetActive(false);
+			orange1.SetActive (true);
+			orange2.SetActive (true);
+			orange3.SetActive (true);
+			orange4.SetActive (true);
+			orange5.SetActive (false);
 		}
-		else if (currentSlicedLemons == 1)
+		else if (currentOranges >= 5)
 		{
-			slicedLemons1.SetActive(true);
-			slicedLemons2.SetActive(false);
-			slicedLemons3.SetActive(false);
-		}
-		else if (currentSlicedLemons == 2)
-		{
-			slicedLemons1.SetActive(false);
-			slicedLemons2.SetActive(true);
-			slicedLemons3.SetActive(false);
-		}
-		else if (currentSlicedLemons >= 3)
-		{
-			slicedLemons1.SetActive(false);
-			slicedLemons2.SetActive(false);
-			slicedLemons3.SetActive(true);
+			orange1.SetActive (true);
+			orange2.SetActive (true);
+			orange3.SetActive (true);
+			orange4.SetActive (true);
+			orange5.SetActive (true);
 		}
 	}
 
-	void ShowSlicedStrawberries()
+	void ShowStrawberries()
 	{
-		if (currentSlicedStrawberries == 0)
+		if (currentStrawberries == 0)
 		{
-			slicedStrawberries1.SetActive(false);
-			slicedStrawberries2.SetActive(false);
-			slicedStrawberries3.SetActive(false);
+			strawberry1.SetActive (false);
+			strawberry2.SetActive (false);
+			strawberry3.SetActive (false);
+			strawberry4.SetActive (false);
+			strawberry5.SetActive (false);
 		}
-		else if (currentSlicedStrawberries == 1)
+		else if (currentStrawberries == 1)
 		{
-			slicedStrawberries1.SetActive(true);
-			slicedStrawberries2.SetActive(false);
-			slicedStrawberries3.SetActive(false);
+			strawberry1.SetActive (true);
+			strawberry2.SetActive (false);
+			strawberry3.SetActive (false);
+			strawberry4.SetActive (false);
+			strawberry5.SetActive (false);
 		}
-		else if (currentSlicedStrawberries == 2)
+		else if (currentStrawberries == 2)
 		{
-			slicedStrawberries1.SetActive(false);
-			slicedStrawberries2.SetActive(true);
-			slicedStrawberries3.SetActive(false);
+			strawberry1.SetActive (true);
+			strawberry2.SetActive (true);
+			strawberry3.SetActive (false);
+			strawberry4.SetActive (false);
+			strawberry5.SetActive (false);
 		}
-		else if (currentSlicedStrawberries >= 3)
+		else if (currentStrawberries == 3)
 		{
-			slicedStrawberries1.SetActive(false);
-			slicedStrawberries2.SetActive(false);
-			slicedStrawberries3.SetActive(true);
+			strawberry1.SetActive (true);
+			strawberry2.SetActive (true);
+			strawberry3.SetActive (true);
+			strawberry4.SetActive (false);
+			strawberry5.SetActive (false);
+		}
+		else if (currentStrawberries == 4)
+		{
+			strawberry1.SetActive (true);
+			strawberry2.SetActive (true);
+			strawberry3.SetActive (true);
+			strawberry4.SetActive (true);
+			strawberry5.SetActive (false);
+		}
+		else if (currentStrawberries >= 5)
+		{
+			strawberry1.SetActive (true);
+			strawberry2.SetActive (true);
+			strawberry3.SetActive (true);
+			strawberry4.SetActive (true);
+			strawberry5.SetActive (true);
+		}
+	}
+
+	void ShowPeeledLemons()
+	{
+		if (currentPeeledLemons == 0)
+		{
+
+		}
+		else if (currentPeeledLemons == 1)
+		{
+
+		}
+		else if (currentPeeledLemons == 2)
+		{
+
+		}
+		else if (currentPeeledLemons == 3)
+		{
+
+		}
+		else if (currentPeeledLemons == 4)
+		{
+
+		}
+		else if (currentPeeledLemons >= 5)
+		{
+
 		}
 	}
 
@@ -243,27 +329,27 @@ public class S_InventoryManager : MonoBehaviour
 	{
 		if (currentPeeledBananas == 0)
 		{
-			peeledBananas1.SetActive(false);
-			peeledBananas2.SetActive(false);
-			peeledBananas3.SetActive(false);
+
 		}
 		else if (currentPeeledBananas == 1)
 		{
-			peeledBananas1.SetActive(true);
-			peeledBananas2.SetActive(false);
-			peeledBananas3.SetActive(false);
+
 		}
 		else if (currentPeeledBananas == 2)
 		{
-			peeledBananas1.SetActive(false);
-			peeledBananas2.SetActive(true);
-			peeledBananas3.SetActive(false);
+
 		}
-		else if (currentPeeledBananas >= 3)
+		else if (currentPeeledBananas == 3)
 		{
-			peeledBananas1.SetActive(false);
-			peeledBananas2.SetActive(false);
-			peeledBananas3.SetActive(true);
+
+		}
+		else if (currentPeeledBananas == 4)
+		{
+
+		}
+		else if (currentPeeledBananas >= 5)
+		{
+
 		}
 	}
 
@@ -271,27 +357,195 @@ public class S_InventoryManager : MonoBehaviour
 	{
 		if (currentPeeledOranges == 0)
 		{
-			peeledOranges1.SetActive(false);
-			peeledOranges2.SetActive(false);
-			peeledOranges3.SetActive(false);
+
 		}
 		else if (currentPeeledOranges == 1)
 		{
-			peeledOranges1.SetActive(true);
-			peeledOranges2.SetActive(false);
-			peeledOranges3.SetActive(false);
+
 		}
 		else if (currentPeeledOranges == 2)
 		{
-			peeledOranges1.SetActive(false);
-			peeledOranges2.SetActive(true);
-			peeledOranges3.SetActive(false);
+
 		}
-		else if (currentPeeledOranges >= 3)
+		else if (currentPeeledOranges == 3)
 		{
-			peeledOranges1.SetActive(false);
-			peeledOranges2.SetActive(false);
-			peeledOranges3.SetActive(true);
+
+		}
+		else if (currentPeeledOranges == 4)
+		{
+
+		}
+		else if (currentPeeledOranges >= 5)
+		{
+
+		}
+	}
+
+	void ShowPeeledStrawberries()
+	{
+		if (currentPeeledStrawberries == 0)
+		{
+
+		}
+		else if (currentPeeledStrawberries == 1)
+		{
+
+		}
+		else if (currentPeeledStrawberries == 2)
+		{
+
+		}
+		else if (currentPeeledStrawberries == 3)
+		{
+
+		}
+		else if (currentPeeledStrawberries == 4)
+		{
+
+		}
+		else if (currentPeeledStrawberries >= 5)
+		{
+
+		}
+	}
+		
+	void ShowSlicedLemons()
+	{
+		if (currentSlicedLemons == 0)
+		{
+
+		}
+		else if (currentSlicedLemons == 1)
+		{
+
+		}
+		else if (currentSlicedLemons == 2)
+		{
+
+		}
+		else if (currentSlicedLemons == 3)
+		{
+
+		}
+		else if (currentSlicedLemons == 4)
+		{
+
+		}
+		else if (currentSlicedLemons >= 5)
+		{
+
+		}
+	}
+
+	void ShowSlicedBananas()
+	{
+		if (currentSlicedBananas == 0)
+		{
+
+		}
+		else if (currentSlicedBananas == 1)
+		{
+
+		}
+		else if (currentSlicedBananas == 2)
+		{
+
+		}
+		else if (currentSlicedBananas == 3)
+		{
+
+		}
+		else if (currentSlicedBananas == 4)
+		{
+
+		}
+		else if (currentSlicedBananas >= 5)
+		{
+
+		}
+	}
+
+	void ShowSlicedOranges()
+	{
+		if (currentSlicedOranges == 0)
+		{
+
+		}
+		else if (currentSlicedOranges == 1)
+		{
+
+		}
+		else if (currentSlicedOranges == 2)
+		{
+
+		}
+		else if (currentSlicedOranges == 3)
+		{
+
+		}
+		else if (currentSlicedOranges == 4)
+		{
+
+		}
+		else if (currentSlicedOranges >= 5)
+		{
+
+		}
+	}
+
+	void ShowSlicedStrawberries()
+	{
+		if (currentSlicedStrawberries == 0)
+		{
+
+		}
+		else if (currentSlicedStrawberries == 1)
+		{
+
+		}
+		else if (currentSlicedStrawberries == 2)
+		{
+
+		}
+		else if (currentSlicedStrawberries == 3)
+		{
+
+		}
+		else if (currentSlicedStrawberries == 4)
+		{
+
+		}
+		else if (currentSlicedStrawberries >= 5)
+		{
+
+		}
+	}
+
+	void ShowCurrentIce()
+	{
+		if (currentIce == 0)
+		{
+
+		}
+		else if (currentIce == 1)
+		{
+
+		}
+		else if (currentIce == 2)
+		{
+
+		}
+		else if (currentIce == 3)
+		{
+
+		}
+		else if (currentIce == 4)
+		{
+
+		}
+		else if (currentIce >= 5)
+		{
+
 		}
 	}
 }

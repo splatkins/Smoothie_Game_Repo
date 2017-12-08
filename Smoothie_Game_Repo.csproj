@@ -78,11 +78,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\S_CustomerRequest.cs" />
     <Compile Include="Assets\Scripts\S_BarController.cs" />
     <Compile Include="Assets\Scripts\S_CameraController.cs" />
     <Compile Include="Assets\Scripts\S_CustomerGeneration.cs" />
     <Compile Include="Assets\Scripts\S_CustomerMovement.cs" />
+    <Compile Include="Assets\Scripts\S_CustomerRequest.cs" />
     <Compile Include="Assets\Scripts\S_CustomerSpawn.cs" />
     <Compile Include="Assets\Scripts\S_CuttingStationControls.cs" />
     <Compile Include="Assets\Scripts\S_InventoryManager.cs" />
