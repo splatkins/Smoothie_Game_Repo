@@ -14,7 +14,8 @@ public class S_CustomerSpawn : MonoBehaviour
 
 	public List<GameObject> currentCustomersList = new List<GameObject>();
 
-	public bool spawn6InUse, spawn5InUse, spawn4InUse, spawn3InUse, spawn2InUse, spawn1InUse;
+	//public bool spawn6InUse, spawn5InUse, spawn4InUse,
+	public bool spawn3InUse, spawn2InUse, spawn1InUse;
 
 	// Use this for initialization
 	void Start ()
@@ -35,40 +36,39 @@ public class S_CustomerSpawn : MonoBehaviour
 		{
 			switch (randomSpawnPoint)
 			{
-
-			case 5:
-				if (spawn6InUse == true)
-				{
-					break;
-				}
-				spawnPoint = customerSpawnPoints [5];
-				spawn6InUse = true;
-				_customer = Instantiate (customer, spawnPoint, Quaternion.identity); //, GameObject.Find ("Environment").GetComponent<Transform> ());
-				//currentCustomers++;
-				currentCustomersList.Add (_customer);
-				break;
-			case 4:
-				if (spawn5InUse == true)
-				{
-					break;
-				}
-				spawnPoint = customerSpawnPoints [4];
-				spawn5InUse = true;
-				_customer = Instantiate (customer, spawnPoint, Quaternion.identity); //, GameObject.Find ("Environment").GetComponent<Transform>());
-				//currentCustomers++;
-				currentCustomersList.Add (_customer);
-				break;
-			case 3:
-				if (spawn4InUse == true)
-				{
-					break;
-				}
-				spawnPoint = customerSpawnPoints [3];
-				spawn4InUse = true;
-				_customer = Instantiate (customer, spawnPoint, Quaternion.identity); //, GameObject.Find ("Environment").GetComponent<Transform>());
-				//currentCustomers++;
-				currentCustomersList.Add (_customer);
-				break;
+//			case 5:
+//				if (spawn6InUse == true)
+//				{
+//					break;
+//				}
+//				spawnPoint = customerSpawnPoints [5];
+//				spawn6InUse = true;
+//				_customer = Instantiate (customer, spawnPoint, Quaternion.identity); //, GameObject.Find ("Environment").GetComponent<Transform> ());
+//				//currentCustomers++;
+//				currentCustomersList.Add (_customer);
+//				break;
+//			case 4:
+//				if (spawn5InUse == true)
+//				{
+//					break;
+//				}
+//				spawnPoint = customerSpawnPoints [4];
+//				spawn5InUse = true;
+//				_customer = Instantiate (customer, spawnPoint, Quaternion.identity); //, GameObject.Find ("Environment").GetComponent<Transform>());
+//				//currentCustomers++;
+//				currentCustomersList.Add (_customer);
+//				break;
+//			case 3:
+//				if (spawn4InUse == true)
+//				{
+//					break;
+//				}
+//				spawnPoint = customerSpawnPoints [3];
+//				spawn4InUse = true;
+//				_customer = Instantiate (customer, spawnPoint, Quaternion.identity); //, GameObject.Find ("Environment").GetComponent<Transform>());
+//				//currentCustomers++;
+//				currentCustomersList.Add (_customer);
+//				break;
 			case 2:
 				if (spawn3InUse == true)
 				{

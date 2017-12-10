@@ -329,7 +329,7 @@ public class S_CuttingStationControls : MonoBehaviour
 		// sliced ingredients
 		if (onBoard.transform.tag == "LemonSliced") // and it is a sliced lemon
 		{
-			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentSlicedLemons++; // add one to sliced lemon count
+			GameObject.Find ("InventoryManager").GetComponent<S_InventoryManager> ().currentSlicedBananas++; // add one to sliced lemon count
 		}
 
 		if (onBoard.transform.tag == "BananaSliced") // and it is a sliced banana

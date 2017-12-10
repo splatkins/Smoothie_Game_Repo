@@ -5,7 +5,8 @@ using UnityEngine;
 public class S_BarController : MonoBehaviour
 {
 	public List<Vector3> barPoints = new List<Vector3> ();
-	public bool barPoint6InUse, barPoint5InUse, barPoint4InUse, barPoint3InUse, barPoint2InUse, barPoint1InUse;
+//	public bool barPoint6InUse, barPoint5InUse, barPoint4InUse,
+	public bool barPoint3InUse, barPoint2InUse, barPoint1InUse;
 
 	// Use this for initialization
 	void Start ()

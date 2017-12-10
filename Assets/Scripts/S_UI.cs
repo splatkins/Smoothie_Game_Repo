@@ -17,7 +17,7 @@ public class S_UI : MonoBehaviour
 
 	public GameObject environment;
 	GameObject gameManager;
-	public GameObject customerManager;
+//	public GameObject gameManager;
 
 	// Use this for initialization
 	void Start ()
@@ -48,7 +48,7 @@ public class S_UI : MonoBehaviour
 		gameOverScreen.SetActive (false);
 
 		environment.SetActive (false);
-		customerManager.SetActive (false);
+//		customerManager.SetActive (false);
 	}
 
 	public void LevelSelectButton()
@@ -79,11 +79,11 @@ public class S_UI : MonoBehaviour
 		gameOverScreen.SetActive (false);
 
 		environment.SetActive (true);
-		customerManager.SetActive (true);
+//		customerManager.SetActive (true);
 
 		//gameManager.GetComponent<S_SpawnEnvironment> ().enabled = true;
 		//gameManager.GetComponent<S_InventoryManager> ().enabled = true;
-//		gameManager.GetComponent<S_CustomerSpawn> ().enabled = true;
+		gameManager.GetComponent<S_CustomerSpawn> ().enabled = true;
 		//gameManager.GetComponent<S_BarController> ().enabled = true;
 
 		//environment = GameObject.Find ("Environment");
@@ -127,6 +127,7 @@ public class S_UI : MonoBehaviour
 
 	public void ExitGame()
 	{
+		print ("Exited Game");
 		Application.Quit ();
 	}
 
@@ -185,26 +186,26 @@ public class S_UI : MonoBehaviour
 		gameManager.GetComponent<S_BarController> ().barPoint1InUse = false;
 		gameManager.GetComponent<S_BarController> ().barPoint2InUse = false;
 		gameManager.GetComponent<S_BarController> ().barPoint3InUse = false;
-		gameManager.GetComponent<S_BarController> ().barPoint4InUse = false;
-		gameManager.GetComponent<S_BarController> ().barPoint5InUse = false;
-		gameManager.GetComponent<S_BarController> ().barPoint6InUse = false;
+//		gameManager.GetComponent<S_BarController> ().barPoint4InUse = false;
+//		gameManager.GetComponent<S_BarController> ().barPoint5InUse = false;
+//		gameManager.GetComponent<S_BarController> ().barPoint6InUse = false;
 
-		customerManager.GetComponent<S_CustomerSpawn> ().spawn1InUse = false;
-		customerManager.GetComponent<S_CustomerSpawn> ().spawn2InUse = false;
-		customerManager.GetComponent<S_CustomerSpawn> ().spawn3InUse = false;
-		customerManager.GetComponent<S_CustomerSpawn> ().spawn4InUse = false;
-		customerManager.GetComponent<S_CustomerSpawn> ().spawn5InUse = false;
-		customerManager.GetComponent<S_CustomerSpawn> ().spawn6InUse = false;
+		gameManager.GetComponent<S_CustomerSpawn> ().spawn1InUse = false;
+		gameManager.GetComponent<S_CustomerSpawn> ().spawn2InUse = false;
+		gameManager.GetComponent<S_CustomerSpawn> ().spawn3InUse = false;
+//		customerManager.GetComponent<S_CustomerSpawn> ().spawn4InUse = false;
+//		customerManager.GetComponent<S_CustomerSpawn> ().spawn5InUse = false;
+//		customerManager.GetComponent<S_CustomerSpawn> ().spawn6InUse = false;
 
-		for (int i = 0; i < customerManager.GetComponent<S_CustomerSpawn> ().currentCustomersList.Count; i++)
+		for (int i = 0; i < gameManager.GetComponent<S_CustomerSpawn> ().currentCustomersList.Count; i++)
 		{
-			Destroy (customerManager.GetComponent<S_CustomerSpawn> ().currentCustomersList [i].gameObject);
+			Destroy (gameManager.GetComponent<S_CustomerSpawn> ().currentCustomersList [i].gameObject);
 		}
 
 
-		customerManager.GetComponent<S_CustomerSpawn> ().currentCustomersList.Clear();
-		customerManager.GetComponent<S_CustomerSpawn> ().currentCustomers = gameManager.GetComponent<S_CustomerSpawn> ().currentCustomersList.Count;
-		customerManager.SetActive (false);
+		gameManager.GetComponent<S_CustomerSpawn> ().currentCustomersList.Clear();
+		gameManager.GetComponent<S_CustomerSpawn> ().currentCustomers = gameManager.GetComponent<S_CustomerSpawn> ().currentCustomersList.Count;
+		gameManager.GetComponent<S_CustomerSpawn> ().enabled = false;
 
 //		gameManager.GetComponent<S_CustomerSpawn> ().currentCustomersList.Clear ();
 //		gameManager.GetComponent<S_CustomerSpawn> ().currentCustomers = gameManager.GetComponent<S_CustomerSpawn> ().currentCustomersList.Count;

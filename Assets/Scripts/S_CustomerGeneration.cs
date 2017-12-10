@@ -16,7 +16,8 @@ public class S_CustomerGeneration : MonoBehaviour
 	// list of male bodies
 	public List<Sprite> maleBodies = new List<Sprite>();
 
-
+	// list of drink requests
+	public List<Sprite> drinkRequests = new List<Sprite>();
 
 	// Use this for initialization
 	void Start ()
@@ -112,5 +113,41 @@ public class S_CustomerGeneration : MonoBehaviour
 			}
 		}
 
+	}
+
+	public void MakeRquest()
+	{
+		int randomDrinkRequest = Random.Range (0, 6);
+
+		if (randomDrinkRequest == 0)
+		{
+			// Lemon twist
+			this.transform.Find("Request").GetComponentInChildren<SpriteRenderer>().sprite = drinkRequests[0];
+		}
+		else if (randomDrinkRequest == 1)
+		{
+			// Orange crush
+			this.transform.Find("Request").GetComponentInChildren<SpriteRenderer>().sprite = drinkRequests[1];
+		}
+		else if (randomDrinkRequest == 2)
+		{
+			// Citrus burst
+			this.transform.Find("Request").GetComponentInChildren<SpriteRenderer>().sprite = drinkRequests[2];
+		}
+		else if (randomDrinkRequest == 3)
+		{
+			// Banana banter
+			this.transform.Find("Request").GetComponentInChildren<SpriteRenderer>().sprite = drinkRequests[3];
+		}
+		else if (randomDrinkRequest == 4)
+		{
+			// Berry bliss
+			this.transform.Find("Request").GetComponentInChildren<SpriteRenderer>().sprite = drinkRequests[4];
+		}
+		else if (randomDrinkRequest == 5)
+		{
+			// Abomination
+			this.transform.Find("Request").GetComponentInChildren<SpriteRenderer>().sprite = drinkRequests[5];
+		}
 	}
 }

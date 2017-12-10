@@ -12,6 +12,8 @@ public class S_CustomerMovement : MonoBehaviour
 	public float speed;
 	Vector3 chosenBarPoint = new Vector3();
 
+	bool madeRequest;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -39,44 +41,56 @@ public class S_CustomerMovement : MonoBehaviour
 		if (doorReached == true)
 		{
 			transform.position = Vector3.MoveTowards (transform.position, chosenBarPoint, step);
-			barReached = true;
+
+			if (transform.position == chosenBarPoint)
+			{
+				barReached = true;
+			}
+		}
+
+		// check if at bar
+		if (barReached == true && madeRequest == false)
+		{
+			// make request
+			this.GetComponent<S_CustomerGeneration>().MakeRquest();
+			madeRequest = true;
 		}
 	}
 
 	void ChooseBarPoint()
 	{
-		int randomBarPoint = Random.Range (0, 6);
+		int randomBarPoint = Random.Range (0, 4);
 		if (gotABarPoint == false)
 		{
 			switch (randomBarPoint)
 			{
-			case 5:
-				if (GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint6InUse == true)
-				{
-					break;
-				}
-				chosenBarPoint = GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoints [5];
-				GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint6InUse = true;
-				gotABarPoint = true;
-				break;
-			case 4:
-				if (GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint5InUse == true)
-				{
-					break;
-				}
-				chosenBarPoint = GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoints [4];
-				GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint5InUse = true;
-				gotABarPoint = true;
-				break;
-			case 3:
-				if (GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint4InUse == true)
-				{
-					break;
-				}
-				chosenBarPoint = GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoints [3];
-				GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint4InUse = true;
-				gotABarPoint = true;
-				break;
+//			case 5:
+//				if (GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint6InUse == true)
+//				{
+//					break;
+//				}
+//				chosenBarPoint = GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoints [5];
+//				GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint6InUse = true;
+//				gotABarPoint = true;
+//				break;
+//			case 4:
+//				if (GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint5InUse == true)
+//				{
+//					break;
+//				}
+//				chosenBarPoint = GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoints [4];
+//				GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint5InUse = true;
+//				gotABarPoint = true;
+//				break;
+//			case 3:
+//				if (GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint4InUse == true)
+//				{
+//					break;
+//				}
+//				chosenBarPoint = GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoints [3];
+//				GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint4InUse = true;
+//				gotABarPoint = true;
+//				break;
 			case 2:
 				if (GameObject.Find ("GameManager").GetComponent<S_BarController> ().barPoint3InUse == true)
 				{

@@ -16,10 +16,12 @@ public class S_CameraController : MonoBehaviour
 	RaycastHit hit;
 
 	public Camera worldCam;
+	public Camera menuStationCam;
 	public Camera cuttingStationCam;
 	public Camera blendingStationCam;
 	public Camera shakingStationCam;
 
+	public Canvas menuStationCanvas;
 	public Canvas cuttingStationCanvas;
 	public Canvas blendingStationCanvas;
 	public Canvas shakingStaionCanvas;
@@ -83,7 +85,7 @@ public class S_CameraController : MonoBehaviour
 				worldCam.transform.Translate (-touchDeltaPosition.x * panSpeed * Time.deltaTime, -touchDeltaPosition.y * panSpeed* Time.deltaTime, 0);
 				worldCam.transform.position = new Vector3 (
 					Mathf.Clamp (transform.position.x, minX, maxX),
-					Mathf.Clamp(transform.position.y, 11, 11),
+					Mathf.Clamp(transform.position.y, 8.5f, 8.5f),
 					Mathf.Clamp (transform.position.z, minZ, maxZ));
 			}
 		}
@@ -123,6 +125,12 @@ public class S_CameraController : MonoBehaviour
 
 			if(Physics.Raycast(ray, out hit, Mathf.Infinity))
 			{
+				if (hit.transform.tag == "MenuStation")
+				{
+					print("Tapped Menu Station");
+					ShowMenuStationCam ();
+				}
+
 				if (hit.transform.tag == "CuttingStation")
 				{
 					print("Tapped Cutting Station");
@@ -148,6 +156,8 @@ public class S_CameraController : MonoBehaviour
 	{
 		worldCam.enabled = true;
 		canMoveWorldCam = true;
+		menuStationCam.enabled = false;
+		menuStationCanvas.enabled = false;
 		cuttingStationCam.enabled = false;
 		cuttingStationCanvas.enabled = false;
 		cuttingStationControls.GetComponent<S_CuttingStationControls> ().enabled = false;
@@ -158,10 +168,28 @@ public class S_CameraController : MonoBehaviour
 		shakingStaionCanvas.enabled = false;
 	}
 
+	void ShowMenuStationCam()
+	{
+		worldCam.enabled = false;
+		canMoveWorldCam = false;
+		menuStationCam.enabled = true;
+		menuStationCanvas.enabled = true;
+		cuttingStationCam.enabled = false;
+		cuttingStationCanvas.enabled = false;
+		cuttingStationControls.GetComponent<S_CuttingStationControls> ().enabled = false;
+		cuttingStationCollider.GetComponent<BoxCollider> ().enabled = false;
+		blendingStationCam.enabled = false;
+		blendingStationCanvas.enabled = false;
+		shakingStationCam.enabled = false;
+		shakingStaionCanvas.enabled = false;
+	}
+
 	void ShowCuttingStationCam()
 	{
 		worldCam.enabled = false;
 		canMoveWorldCam = false;
+		menuStationCam.enabled = false;
+		menuStationCanvas.enabled = false;
 		cuttingStationCam.enabled = true;
 		cuttingStationCanvas.enabled = true;
 		cuttingStationControls.GetComponent<S_CuttingStationControls> ().enabled = true;
@@ -176,6 +204,8 @@ public class S_CameraController : MonoBehaviour
 	{
 		worldCam.enabled = false;
 		canMoveWorldCam = false;
+		menuStationCam.enabled = false;
+		menuStationCanvas.enabled = false;
 		cuttingStationCam.enabled = false;
 		cuttingStationCanvas.enabled = false;
 		cuttingStationControls.GetComponent<S_CuttingStationControls> ().enabled = false;
@@ -190,6 +220,8 @@ public class S_CameraController : MonoBehaviour
 	{
 		worldCam.enabled = false;
 		canMoveWorldCam = false;
+		menuStationCam.enabled = false;
+		menuStationCanvas.enabled = false;
 		cuttingStationCam.enabled = false;
 		cuttingStationCanvas.enabled = false;
 		cuttingStationControls.GetComponent<S_CuttingStationControls> ().enabled = false;
