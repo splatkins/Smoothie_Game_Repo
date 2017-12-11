@@ -6,7 +6,7 @@ public class S_CameraController : MonoBehaviour
 {
 	// zoom speeds
 	public float perspectiveZoonSpeed = 0.5f;
-	public float orthoZoomSpeed = 0.5f;
+	float orthoZoomSpeed = 0.5f;
 
 	private float minX, maxX, minZ, maxZ;
 	//private Vector3 myPosition;
@@ -27,8 +27,10 @@ public class S_CameraController : MonoBehaviour
 	public Canvas shakingStaionCanvas;
 
 	public GameObject cuttingStationControls;
+	public GameObject blendingStationControls;
 
 	public GameObject cuttingStationCollider;
+	public GameObject blendingStationCollider;
 
 	bool canMoveWorldCam;
 
@@ -39,10 +41,10 @@ public class S_CameraController : MonoBehaviour
 		ShowWorldCam ();
 	//	cuttingStationCam = GameObject.FindWithTag ("CuttingStationCamera");
 
-		minX = -6f;
-		maxX = 5.1f;
-		minZ = -12.3f;
-		maxZ = 1.4f;
+		minX = -1.47f; //-6f;
+		maxX = 2.8f; //5.1f;
+		minZ = -7.5f; //-12.3f;
+		maxZ = -0.25f; //1.4f;
 	}
 	
 	// Update is called once per frame
@@ -164,6 +166,8 @@ public class S_CameraController : MonoBehaviour
 		cuttingStationCollider.GetComponent<BoxCollider> ().enabled = true;
 		blendingStationCam.enabled = false;
 		blendingStationCanvas.enabled = false;
+		blendingStationControls.GetComponent<S_BlendingStationControls> ().enabled = false;
+		blendingStationCollider.GetComponent<BoxCollider> ().enabled = true;
 		shakingStationCam.enabled = false;
 		shakingStaionCanvas.enabled = false;
 	}
@@ -180,6 +184,8 @@ public class S_CameraController : MonoBehaviour
 		cuttingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		blendingStationCam.enabled = false;
 		blendingStationCanvas.enabled = false;
+		blendingStationControls.GetComponent<S_BlendingStationControls> ().enabled = false;
+		blendingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		shakingStationCam.enabled = false;
 		shakingStaionCanvas.enabled = false;
 	}
@@ -196,6 +202,8 @@ public class S_CameraController : MonoBehaviour
 		cuttingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		blendingStationCam.enabled = false;
 		blendingStationCanvas.enabled = false;
+		blendingStationControls.GetComponent<S_BlendingStationControls> ().enabled = false;
+		blendingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		shakingStationCam.enabled = false;
 		shakingStaionCanvas.enabled = false;
 	}
@@ -212,6 +220,8 @@ public class S_CameraController : MonoBehaviour
 		cuttingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		blendingStationCam.enabled = true;
 		blendingStationCanvas.enabled = true;
+		blendingStationControls.GetComponent<S_BlendingStationControls> ().enabled = true;
+		blendingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		shakingStationCam.enabled = false;
 		shakingStaionCanvas.enabled = false;
 	}
@@ -228,6 +238,8 @@ public class S_CameraController : MonoBehaviour
 		cuttingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		blendingStationCam.enabled = false;
 		blendingStationCanvas.enabled = false;
+		blendingStationControls.GetComponent<S_BlendingStationControls> ().enabled = false;
+		blendingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		shakingStationCam.enabled = true;
 		shakingStaionCanvas.enabled = true;
 	}

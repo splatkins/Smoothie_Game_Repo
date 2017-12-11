@@ -107,9 +107,9 @@ MonoBehaviour:
     width: 1920
     height: 947
   m_MinSize: {x: 887, y: 492}
-  m_MaxSize: {x: 18008, y: 14042}
+  m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 169
+  controlID: 172
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -131,7 +131,7 @@ MonoBehaviour:
     width: 1484
     height: 947
   m_MinSize: {x: 610, y: 492}
-  m_MaxSize: {x: 14006, y: 14042}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 1
   controlID: 71
 --- !u!114 &7
@@ -177,8 +177,8 @@ MonoBehaviour:
     y: 0
     width: 202
     height: 676
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -254,10 +254,10 @@ MonoBehaviour:
     y: 676
     width: 1484
     height: 271
-  m_MinSize: {x: 336, y: 271}
-  m_MaxSize: {x: 14006, y: 10021}
+  m_MinSize: {x: 332, y: 271}
+  m_MaxSize: {x: 14002, y: 10021}
   vertical: 0
-  controlID: 136
+  controlID: 94
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -301,8 +301,8 @@ MonoBehaviour:
     y: 0
     width: 669
     height: 271
-  m_MinSize: {x: 104, y: 121}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -402,7 +402,7 @@ MonoBehaviour:
       width: 701
       height: 638
     m_MinimalGUI: 1
-  m_defaultScale: 1
+  m_defaultScale: 0.6845703
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
   m_LastWindowPixelSize: {x: 701, y: 655}
@@ -437,23 +437,23 @@ MonoBehaviour:
     height: 655
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d2370000
-    m_LastClickedID: 14290
-    m_ExpandedIDs: 1afcffff00000000b62b0000fc2c0000622d00003e3300002a360000
+    m_SelectedIDs: 5e2b0000
+    m_LastClickedID: 11102
+    m_ExpandedIDs: c401f6ff7c44f6ff8cb0f8ff5cb2f8ff64b2f8ff66b2f8ffcaecf8ffceecf8ffd2ecf8ffd8ecf8ffdaecf8ffd227f9ffd827f9ffde27f9ffe027f9ffe227f9ffe427f9ffe827f9ff2c5ff9ff305ff9ff345ff9ff365ff9ff385ff9ff3c5ff9ff0673faff0c73faff1673faff1873faff1a73faff1c73faff1e73fafff2f4faff1afcffff000000002e2a00005e2b0000b62b0000d22b0000ee2b0000142c0000742c0000102d00005e2d0000722d0000de2e0000e82e0000d42f0000ea300000f83000003a32000052320000d0320000e23200000a3300003834000074340000c43500002836000078370000c037000026380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: MakeableDrink
+      m_OriginalName: MakeableDrink
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -1271022
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -489,14 +489,14 @@ MonoBehaviour:
     width: 573
     height: 655
   m_SceneLighting: 1
-  lastFramingTime: 2847.534830942684
-  m_2DMode: 0
+  lastFramingTime: 18978.353462755527
+  m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.2545585, y: 2.75, z: -1.4142134}
+    m_Target: {x: 350.50012, y: 219.00002, z: 0.000045776367}
     speed: 2
-    m_Value: {x: -0.2545585, y: 2.75, z: -1.4142134}
+    m_Value: {x: 350.50012, y: 219.00002, z: 0.000045776367}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -511,26 +511,26 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     yGrid:
-      m_Target: 1
-      speed: 2
-      m_Value: 1
-    zGrid:
       m_Target: 0
       speed: 2
       m_Value: 0
+    zGrid:
+      m_Target: 1
+      speed: 2
+      m_Value: 1
   m_Rotation:
-    m_Target: {x: -0.29292506, y: -0.13368273, z: 0.041400075, w: -0.9458383}
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: {x: -0.2929251, y: -0.13368273, z: 0.041400075, w: -0.9458383}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 22
+    m_Target: 584.0143
     speed: 2
-    m_Value: 22
+    m_Value: 584.0143
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
-  m_LastSceneViewRotation: {x: -0.4371501, y: -0.14935601, z: 0.07387225, w: -0.8838187}
+    m_Value: 1
+  m_LastSceneViewRotation: {x: 0.21317758, y: -0.77182895, z: 0.3284499, w: 0.5009552}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -574,19 +574,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Prefabs/Ingredients
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 58
   m_LastFolders:
-  - Assets/Prefabs/Ingredients
+  - Assets
   m_LastFoldersGridSize: 58
   m_LastProjectPath: D:\Development\GitHub\Smoothie_Game_Repo
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 299}
-    m_SelectedIDs: 9c270000
-    m_LastClickedID: 10140
-    m_ExpandedIDs: 0000000022260000902600000c2700000e27000012270000b0270000022800003429000062290000ca290000563b0000583b00005a3b00005c3b000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: 22260000
+    m_LastClickedID: 9762
+    m_ExpandedIDs: 000000002226000092260000102700001427000018270000ba2700000c2800004429000072290000dc290000f03a0000f23a0000f43a0000f63a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -614,7 +614,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000022260000902600000c2700000e27000012270000b0270000022800003429000062290000ca290000563b0000583b00005a3b00005c3b0000
+    m_ExpandedIDs: 000000002226000092260000102700001427000018270000ba2700000c2800004429000072290000dc290000f03a0000f23a0000f43a0000f63a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -721,7 +721,7 @@ MonoBehaviour:
     y: 92
     width: 434
     height: 926
-  m_ScrollPosition: {x: 0, y: 166.95508}
+  m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 160

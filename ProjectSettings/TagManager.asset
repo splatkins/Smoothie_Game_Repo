@@ -18,11 +18,26 @@ TagManager:
   - BananaBowl
   - Orange
   - OrangeBowl
-  - SlicedLemon
-  - SlicedStrawberry
-  - PeeledBanana
-  - PeeledOrange
   - MenuStation
+  - LemonPeeled
+  - BananaPeeled
+  - OrangePeeled
+  - StrawberryPeeled
+  - LemonSliced
+  - BananaSliced
+  - OrangeSliced
+  - StrawberrySliced
+  - LemonSliceBowl
+  - BananaSliceBowl
+  - OrangeSliceBowl
+  - StrawberrySliceBowl
+  - LemonSlice
+  - BananaSlice
+  - OrangeSlice
+  - StrawberrySlice
+  - Blender
+  - IceBowl
+  - Ice
   layers:
   - Default
   - TransparentFX

@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\S_BlendingStationControls.cs" />
      <Compile Include="Assets\Scripts\S_BarController.cs" />
      <Compile Include="Assets\Scripts\S_CameraController.cs" />
      <Compile Include="Assets\Scripts\S_CustomerGeneration.cs" />
