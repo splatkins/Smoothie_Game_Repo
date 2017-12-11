@@ -38,6 +38,11 @@ TagManager:
   - Blender
   - IceBowl
   - Ice
+  - PeeledBanana
+  - SlicedLemon
+  - PeeledOrange
+  - SlicedStrawberry
+  - BlenderLidOn
   layers:
   - Default
   - TransparentFX

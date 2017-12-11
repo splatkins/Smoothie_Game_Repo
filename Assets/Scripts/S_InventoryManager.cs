@@ -32,6 +32,12 @@ public class S_InventoryManager : MonoBehaviour
 	public GameObject strawberrySlice1, strawberrySlice2, strawberrySlice3, strawberrySlice4, strawberrySlice5, strawberrySlice6, strawberrySlice7, strawberrySlice8, strawberrySlice9, strawberrySlice10, strawberrySlice11, strawberrySlice12, strawberrySlice13, strawberrySlice14, strawberrySlice15;
 	public GameObject ice1, ice2, ice3, ice4, ice5, ice6, ice7, ice8, ice9, ice10, ice11, ice12, ice13, ice14, ice15, ice16, ice17, ice18, ice19, ice20, ice21, ice22, ice23, ice24;
 
+	// unshaken drinks
+	public int currentUnshakenLemonTwist = 0, currentUnshakenOrangeCrush = 0, currentUnshakenCitrusBurst = 0, currentUnshakenBananaBanter = 0, currentUnshakenBerryBliss = 0, currentUnshakenAbomination = 0;
+
+	// unshaken drinks prefabs
+	public GameObject unshakenLemonTwistBS, unshakenLemonTwistSS, unshakenOrangeCrushBS, unshakenOrangeCrushSS, unshakenCitrusBurstBS, unshakenCitrusBurstSS, unshakenBananaBanterBS, unshakenBananaBanterSS, unshakenBerryBlissBS, unshakenBerryBlissSS, unshakenAbominationBS, unshakenAbominationSS;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -59,6 +65,9 @@ public class S_InventoryManager : MonoBehaviour
 		ShowSlicedOranges ();
 		ShowSlicedStrawberries ();
 		ShowIce ();
+
+		// display current unshaken drink
+//		ShowUnshakenDrink();
 	}
 
 	void ShowLemons()
@@ -860,4 +869,13 @@ public class S_InventoryManager : MonoBehaviour
 			ice1.SetActive (true); ice2.SetActive (true); ice3.SetActive (true); ice4.SetActive (true); ice5.SetActive (true); ice6.SetActive (true); ice7.SetActive (true); ice8.SetActive (true); ice9.SetActive (true); ice10.SetActive (true); ice11.SetActive (true); ice12.SetActive (true); ice13.SetActive (true); ice14.SetActive (true); ice15.SetActive (true); ice16.SetActive (true); ice17.SetActive (true); ice18.SetActive (true); ice19.SetActive (true); ice20.SetActive (true); ice21.SetActive (true); ice22.SetActive (true); ice23.SetActive (true); ice24.SetActive (true);
 		}
 	}
+
+//	void ShowUnshakenDrink()
+//	{
+//		if (currentUnshakenBerryBliss == 1)
+//		{
+//			unshakenBerryBlissBS.SetActive (true);
+//			unshakenBerryBlissSS.SetActive (false);
+//		}
+//	}
 }

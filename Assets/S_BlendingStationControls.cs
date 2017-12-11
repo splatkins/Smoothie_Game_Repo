@@ -14,6 +14,9 @@ public class S_BlendingStationControls : MonoBehaviour
 	public GameObject clearButton;
 	public GameObject blendButton;
 
+	public GameObject blenderLidOff;
+	public GameObject blenderLidOn;
+
 	public GameObject pickedUp;
 
 	// individual ingredient slices
@@ -39,7 +42,11 @@ public class S_BlendingStationControls : MonoBehaviour
 	public Image makeableDrinkImage;
 	public List<Sprite> makeableDrinks = new List<Sprite>();
 	bool canMakeNothing = true;
-	bool blending;
+	public bool blending;
+	bool somethingInBlender;
+
+	private float holdTime = 3.0f; // time to hold blender
+	private float acumTime = 0;
 
 	// Use this for initialization
 	void Start ()
@@ -117,7 +124,7 @@ public class S_BlendingStationControls : MonoBehaviour
 				{
 					pickedUp.transform.position = new Vector3 (touchedPos.x, touchedPos.y, touchedPos.z); // move it
 
-					if(hit.transform.tag == "Blender" && pickedSomethingUp == true) // drop it in blender
+					if(hit.transform.tag == "Blender" && pickedSomethingUp == true && somethingInBlender == false) // drop it in blender
 					{
 						if (pickedUp.transform.tag == "LemonSlice")
 						{
@@ -192,8 +199,110 @@ public class S_BlendingStationControls : MonoBehaviour
 				if (blending == true)
 				{
 					// change to blender lid on
-					// check for touch and hold on blender for 3 seconds
-					// display vibation while holding
+					blenderLidOff.SetActive (false);
+					blenderLidOn.SetActive (true);
+
+					// check for touch and hold on blender for 3 seconds to start blending
+					if (hit.transform.tag == "BlenderLidOn")
+					{
+						acumTime += Input.GetTouch (0).deltaTime;
+						print (acumTime);
+						// show vibration
+
+						if (acumTime >= holdTime)
+						{
+							// switch back to lid off blender
+							blenderLidOff.SetActive (true);
+							blenderLidOn.SetActive (false);
+
+							blending = false;
+							// hide vibration
+
+							// add unshaken drink to inventory
+							if (makeableDrinkImage.GetComponent<Image> ().sprite == makeableDrinks [0]) // lemon twist
+							{
+								// show unshaken drink
+								gameManager.GetComponent<S_InventoryManager> ().currentUnshakenLemonTwist++;
+								gameManager.GetComponent<S_InventoryManager>().unshakenLemonTwistBS.SetActive(true);
+								somethingInBlender = true;
+
+								// remove blender ingredient contents
+								lemonSliceCount -= 14;
+								iceCount -= 3;
+							}
+
+							if (makeableDrinkImage.GetComponent<Image> ().sprite == makeableDrinks [1]) // orange crush
+							{
+								// show unshaken drink
+								gameManager.GetComponent<S_InventoryManager> ().currentUnshakenOrangeCrush++;
+								gameManager.GetComponent<S_InventoryManager>().unshakenOrangeCrushBS.SetActive(true);
+								somethingInBlender = true;
+
+								// remove blender ingredient contents
+								orangeSliceCount -= 15;
+								iceCount -= 3;
+							}
+
+							if (makeableDrinkImage.GetComponent<Image> ().sprite == makeableDrinks [2]) // citrus burst
+							{
+								// show unshaken drink
+								gameManager.GetComponent<S_InventoryManager> ().currentUnshakenCitrusBurst++;
+								gameManager.GetComponent<S_InventoryManager>().unshakenCitrusBurstBS.SetActive(true);
+								somethingInBlender = true;
+
+								// remove blender ingredient contents
+								lemonSliceCount -= 7;
+								orangeSliceCount -= 10;
+							}
+
+							if (makeableDrinkImage.GetComponent<Image> ().sprite == makeableDrinks [3]) // banana banter
+							{
+								// show unshaken drink
+								gameManager.GetComponent<S_InventoryManager> ().currentUnshakenBananaBanter++;
+								gameManager.GetComponent<S_InventoryManager>().unshakenBananaBanterBS.SetActive(true);
+								somethingInBlender = true;
+
+								// remove blender ingredient contents
+								bananaSliceCount -= 21;
+							}
+
+							if (makeableDrinkImage.GetComponent<Image> ().sprite == makeableDrinks [4]) // berry bliss
+							{
+								// show unshaken drink
+								gameManager.GetComponent<S_InventoryManager> ().currentUnshakenBerryBliss++;
+								gameManager.GetComponent<S_InventoryManager>().unshakenBerryBlissBS.SetActive(true);
+								somethingInBlender = true;
+
+								// remove blender ingredient contents
+								strawberrySliceCount -= 9;
+								iceCount -= 3;
+							}
+
+							if (makeableDrinkImage.GetComponent<Image> ().sprite == makeableDrinks [5]) // abomination
+							{
+								// show unshaken drink
+								gameManager.GetComponent<S_InventoryManager> ().currentUnshakenAbomination++;
+								gameManager.GetComponent<S_InventoryManager>().unshakenAbominationBS.SetActive(true);
+								somethingInBlender = true;
+
+								// remove blender ingredient contents
+								lemonSliceCount -= 7;
+								bananaSliceCount -= 7;
+								orangeSliceCount -= 5;
+								strawberrySliceCount -= 3;
+							}
+
+
+						}
+
+						if (Input.GetTouch (0).phase == TouchPhase.Ended) // if finger is lifted off screen
+						{
+							acumTime = 0;
+						}
+					}
+
+
+
 
 					// after held 3 secs change to lid off blender and hide jug
 					// enable shaking station jug
@@ -202,7 +311,7 @@ public class S_BlendingStationControls : MonoBehaviour
 		}
 
 		// show clear button if something in blender
-		if (lemonSliceCount > 0 || bananaSliceCount > 0 || orangeSliceCount > 0 || strawberrySliceCount > 0 || iceCount > 0)
+		if (lemonSliceCount > 0 || bananaSliceCount > 0 || orangeSliceCount > 0 || strawberrySliceCount > 0 || iceCount > 0 || somethingInBlender == true)
 		{
 			clearButton.SetActive (true);
 		}
@@ -216,62 +325,69 @@ public class S_BlendingStationControls : MonoBehaviour
 		if (lemonSliceCount == 14 && bananaSliceCount == 0 && orangeSliceCount == 0 && strawberrySliceCount == 0 && iceCount == 3)
 		{
 			// can make lemon twist
-			print("Can make lemon twist");
+			//print("Can make lemon twist");
 			makeableDrinkImage.enabled = true;
 			makeableDrinkImage.GetComponent<Image>().sprite = makeableDrinks[0];
 			canMakeNothing = false;
+			blendButton.SetActive(true);
 		}
 		else if (lemonSliceCount == 0 && bananaSliceCount == 0 && orangeSliceCount == 15 && strawberrySliceCount == 0 && iceCount == 3)
 		{
 			// can make orange crush
-			print("Can make orange crush");
+			//print("Can make orange crush");
 			makeableDrinkImage.enabled = true;
 			makeableDrinkImage.GetComponent<Image>().sprite = makeableDrinks[1];
 			canMakeNothing = false;
+			blendButton.SetActive(true);
 		}
 		else if (lemonSliceCount == 7 && bananaSliceCount == 0 && orangeSliceCount == 10 && strawberrySliceCount == 0 && iceCount == 0)
 		{
 			// can make citrus burst
-			print("Can make citrus burst");
+			//print("Can make citrus burst");
 			makeableDrinkImage.enabled = true;
 			makeableDrinkImage.GetComponent<Image>().sprite = makeableDrinks[2];
 			canMakeNothing = false;
+			blendButton.SetActive(true);
 		}
 		else if (lemonSliceCount == 0 && bananaSliceCount == 21 && orangeSliceCount == 0 && strawberrySliceCount == 0 && iceCount == 0)
 		{
 			// can make banana banter
-			print("Can make banana banter");
+			//print("Can make banana banter");
 			makeableDrinkImage.enabled = true;
 			makeableDrinkImage.GetComponent<Image>().sprite = makeableDrinks[3];
 			canMakeNothing = false;
+			blendButton.SetActive(true);
 		}
 		else if (lemonSliceCount == 0 && bananaSliceCount == 0 && orangeSliceCount == 0 && strawberrySliceCount == 9 && iceCount == 3)
 		{
 			// can make berry bliss
-			print("Can make berry bliss");
+			//print("Can make berry bliss");
 			makeableDrinkImage.enabled = true;
 			makeableDrinkImage.GetComponent<Image>().sprite = makeableDrinks[4];
 			canMakeNothing = false;
+			blendButton.SetActive(true);
 		}
 		else if (lemonSliceCount == 7 && bananaSliceCount == 7 && orangeSliceCount == 5 && strawberrySliceCount == 3 && iceCount == 0)
 		{
 			// can make abomination
-			print("Can make abomination");
+			//sprint("Can make abomination");
 			makeableDrinkImage.enabled = true;
 			makeableDrinkImage.GetComponent<Image>().sprite = makeableDrinks[5];
 			canMakeNothing = false;
+			blendButton.SetActive(true);
 		}
 		else
 		{
 			// can make nothing
 			makeableDrinkImage.GetComponent<Image>().enabled = false;
+			blendButton.SetActive (false);
 		}
 
-		if (canMakeNothing == false)
-		{
-			// show blend button if something can be made
-			blendButton.SetActive(true);
-		}
+//		if (canMakeNothing == false)
+//		{
+//			// show blend button if something can be made
+//			blendButton.SetActive(true);
+//		}
 
 		makeableDrinkImage.preserveAspect = true;
 	}
@@ -293,7 +409,63 @@ public class S_BlendingStationControls : MonoBehaviour
 		gameManager.GetComponent<S_InventoryManager> ().currentIce += iceCount;
 		iceCount = 0;
 
+		// clear made drink to shaking station blender
+		if(gameManager.GetComponent<S_InventoryManager>().currentUnshakenLemonTwist == 1) // drink is berry bliss
+		{
+			//unshakenBerryBlissSS.SetActive (true);
+			gameManager.GetComponent<S_InventoryManager>().unshakenLemonTwistBS.SetActive(false);
+			gameManager.GetComponent<S_InventoryManager>().unshakenLemonTwistSS.SetActive(true);
+
+			somethingInBlender = false;
+		}
+
+		if(gameManager.GetComponent<S_InventoryManager>().currentUnshakenOrangeCrush == 1) // drink is orange crush
+		{
+			//unshakenBerryBlissSS.SetActive (true);
+			gameManager.GetComponent<S_InventoryManager>().unshakenOrangeCrushBS.SetActive(false);
+			gameManager.GetComponent<S_InventoryManager>().unshakenOrangeCrushSS.SetActive(true);
+
+			somethingInBlender = false;
+		}
+
+		if(gameManager.GetComponent<S_InventoryManager>().currentUnshakenCitrusBurst == 1) // drink is citrus burst
+		{
+			//unshakenBerryBlissSS.SetActive (true);
+			gameManager.GetComponent<S_InventoryManager>().unshakenCitrusBurstBS.SetActive(false);
+			gameManager.GetComponent<S_InventoryManager>().unshakenCitrusBurstSS.SetActive(true);
+
+			somethingInBlender = false;
+		}
+
+		if(gameManager.GetComponent<S_InventoryManager>().currentUnshakenBananaBanter == 1) // drink is banana banter
+		{
+			//unshakenBerryBlissSS.SetActive (true);
+			gameManager.GetComponent<S_InventoryManager>().unshakenBananaBanterBS.SetActive(false);
+			gameManager.GetComponent<S_InventoryManager>().unshakenBananaBanterSS.SetActive(true);
+
+			somethingInBlender = false;
+		}
+
+		if(gameManager.GetComponent<S_InventoryManager>().currentUnshakenBerryBliss == 1) // drink is berry bliss
+		{
+			//unshakenBerryBlissSS.SetActive (true);
+			gameManager.GetComponent<S_InventoryManager>().unshakenBerryBlissBS.SetActive(false);
+			gameManager.GetComponent<S_InventoryManager>().unshakenBerryBlissSS.SetActive(true);
+
+			somethingInBlender = false;
+		}
+
+		if(gameManager.GetComponent<S_InventoryManager>().currentUnshakenAbomination == 1) // drink is abomination
+		{
+			//unshakenBerryBlissSS.SetActive (true);
+			gameManager.GetComponent<S_InventoryManager>().unshakenAbominationBS.SetActive(false);
+			gameManager.GetComponent<S_InventoryManager>().unshakenAbominationSS.SetActive(true);
+
+			somethingInBlender = false;
+		}
+
 		clearButton.SetActive (false);
+		blendButton.SetActive (false);
 		canMakeNothing = true;
 	}
 
