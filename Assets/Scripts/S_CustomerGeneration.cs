@@ -6,9 +6,11 @@ public class S_CustomerGeneration : MonoBehaviour
 {
 	// list of female heads
 	public List<Sprite> femaleHeads = new List<Sprite>();
+	public List<Sprite> femaleHappyHeads = new List<Sprite>();
 
-	// list of female heads
+	// list of male heads
 	public List<Sprite> maleHeads = new List<Sprite>();
+	public List<Sprite> maleHappyHeads = new List<Sprite>();
 
 	// list of female bodies
 	public List<Sprite> femaleBodies = new List<Sprite>();
@@ -18,6 +20,9 @@ public class S_CustomerGeneration : MonoBehaviour
 
 	// list of drink requests
 	public List<Sprite> drinkRequests = new List<Sprite>();
+
+	public string myRequest = "nothing";
+	public bool happy;
 
 	// Use this for initialization
 	void Start ()
@@ -123,31 +128,72 @@ public class S_CustomerGeneration : MonoBehaviour
 		{
 			// Lemon twist
 			this.transform.Find("Request").GetComponentInChildren<SpriteRenderer>().sprite = drinkRequests[0];
+			myRequest = "Lemon Twist";
 		}
 		else if (randomDrinkRequest == 1)
 		{
 			// Orange crush
 			this.transform.Find("Request").GetComponentInChildren<SpriteRenderer>().sprite = drinkRequests[1];
+			myRequest = "Orange Crush";
 		}
 		else if (randomDrinkRequest == 2)
 		{
 			// Citrus burst
 			this.transform.Find("Request").GetComponentInChildren<SpriteRenderer>().sprite = drinkRequests[2];
+			myRequest = "Citrus Burst";
 		}
 		else if (randomDrinkRequest == 3)
 		{
 			// Banana banter
 			this.transform.Find("Request").GetComponentInChildren<SpriteRenderer>().sprite = drinkRequests[3];
+			myRequest = "Banana Banter";
 		}
 		else if (randomDrinkRequest == 4)
 		{
 			// Berry bliss
 			this.transform.Find("Request").GetComponentInChildren<SpriteRenderer>().sprite = drinkRequests[4];
+			myRequest = "Berry Bliss";
 		}
 		else if (randomDrinkRequest == 5)
 		{
 			// Abomination
 			this.transform.Find("Request").GetComponentInChildren<SpriteRenderer>().sprite = drinkRequests[5];
+			myRequest = "Abomination";
 		}
+	}
+
+	public void HappyCustomer()
+	{
+		if (this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite == femaleHeads [0])
+		{
+			this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = femaleHappyHeads [0];
+		}
+
+		if (this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite == femaleHeads [1])
+		{
+			this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = femaleHappyHeads [1];
+		}
+
+		if (this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite == femaleHeads [2])
+		{
+			this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = femaleHappyHeads [2];
+		}
+
+		if (this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite == maleHeads [0])
+		{
+			this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = maleHappyHeads [0];
+		}
+
+		if (this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite == maleHeads [1])
+		{
+			this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = maleHappyHeads [1];
+		}
+
+		if (this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite == maleHeads [2])
+		{
+			this.transform.Find ("Head").GetComponentInChildren<SpriteRenderer> ().sprite = maleHappyHeads [2];
+		}
+
+		happy = true;
 	}
 }

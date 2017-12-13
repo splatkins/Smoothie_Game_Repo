@@ -38,6 +38,9 @@ public class S_InventoryManager : MonoBehaviour
 	// unshaken drinks prefabs
 	public GameObject unshakenLemonTwistBS, unshakenLemonTwistSS, unshakenOrangeCrushBS, unshakenOrangeCrushSS, unshakenCitrusBurstBS, unshakenCitrusBurstSS, unshakenBananaBanterBS, unshakenBananaBanterSS, unshakenBerryBlissBS, unshakenBerryBlissSS, unshakenAbominationBS, unshakenAbominationSS;
 
+	// shaken drinks
+	public int currentShakenLemonTwist = 0, currentShakenOrangeCrush = 0, currentShakenCitrusBurst = 0, currentShakenBananaBanter = 0, currentShakenBerryBliss = 0, currentShakenAbomination = 0;
+
 	// Use this for initialization
 	void Start ()
 	{

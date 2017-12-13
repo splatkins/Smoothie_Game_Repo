@@ -28,9 +28,11 @@ public class S_CameraController : MonoBehaviour
 
 	public GameObject cuttingStationControls;
 	public GameObject blendingStationControls;
+	public GameObject shakingStationControls;
 
 	public GameObject cuttingStationCollider;
 	public GameObject blendingStationCollider;
+	public GameObject shakingStationCollider;
 
 	bool canMoveWorldCam;
 
@@ -118,7 +120,7 @@ public class S_CameraController : MonoBehaviour
 			}
 		}
 
-		// check to see if interactive station touched
+
 		if (Input.GetTouch (0).phase == TouchPhase.Began)
 		{
 			ray = worldCam.ScreenPointToRay (Input.GetTouch (0).position);
@@ -127,6 +129,7 @@ public class S_CameraController : MonoBehaviour
 
 			if(Physics.Raycast(ray, out hit, Mathf.Infinity))
 			{
+				// check to see if interactive station touched
 				if (hit.transform.tag == "MenuStation")
 				{
 					print("Tapped Menu Station");
@@ -150,8 +153,95 @@ public class S_CameraController : MonoBehaviour
 					print("Tapped Shaking Station");
 					ShowShakingStationCam ();
 				}
+
+				// check to see if customer request bubble touched
+				if (hit.transform.tag == "Request")
+				{
+					print ("Tapped request bubble");
+
+					if (hit.transform.GetComponentInParent<S_CustomerGeneration> ().myRequest == "Lemon Twist" && GameObject.Find("GameManager").GetComponent<S_InventoryManager>().currentShakenLemonTwist > 0)
+					{
+						// disable lemon twist on bar
+						GameObject.Find("ShakingStationCamera").GetComponent<S_ShakingStationControls>().lemonTwist.SetActive(false);
+						// minus 1 from inventory
+						GameObject.Find("GameManager").GetComponent<S_InventoryManager>().currentShakenLemonTwist--;
+						// give customer happy face
+						GameObject.Find("Customer(Clone)").GetComponent<S_CustomerGeneration>().HappyCustomer();
+
+							// if happy face, leave
+
+					}
+
+					if (hit.transform.GetComponentInParent<S_CustomerGeneration> ().myRequest == "Orange Crush" && GameObject.Find("GameManager").GetComponent<S_InventoryManager>().currentShakenOrangeCrush > 0)
+					{
+						// disable lemon twist on bar
+						GameObject.Find("ShakingStationCamera").GetComponent<S_ShakingStationControls>().orangeCrush.SetActive(false);
+						// minus 1 from inventory
+						GameObject.Find("GameManager").GetComponent<S_InventoryManager>().currentShakenOrangeCrush--;
+						// give customer happy face
+						GameObject.Find("Customer(Clone)").GetComponent<S_CustomerGeneration>().HappyCustomer();
+
+						// if happy face, leave
+
+					}
+
+					if (hit.transform.GetComponentInParent<S_CustomerGeneration> ().myRequest == "Citrus Burst" && GameObject.Find("GameManager").GetComponent<S_InventoryManager>().currentShakenCitrusBurst > 0)
+					{
+						// disable lemon twist on bar
+						GameObject.Find("ShakingStationCamera").GetComponent<S_ShakingStationControls>().citrusBurst.SetActive(false);
+						// minus 1 from inventory
+						GameObject.Find("GameManager").GetComponent<S_InventoryManager>().currentShakenCitrusBurst--;
+						// give customer happy face
+						GameObject.Find("Customer(Clone)").GetComponent<S_CustomerGeneration>().HappyCustomer();
+
+						// if happy face, leave
+
+					}
+
+					if (hit.transform.GetComponentInParent<S_CustomerGeneration> ().myRequest == "Banana Banter" && GameObject.Find("GameManager").GetComponent<S_InventoryManager>().currentShakenBananaBanter > 0)
+					{
+						// disable lemon twist on bar
+						GameObject.Find("ShakingStationCamera").GetComponent<S_ShakingStationControls>().bananaBanter.SetActive(false);
+						// minus 1 from inventory
+						GameObject.Find("GameManager").GetComponent<S_InventoryManager>().currentShakenBananaBanter--;
+						// give customer happy face
+						GameObject.Find("Customer(Clone)").GetComponent<S_CustomerGeneration>().HappyCustomer();
+
+						// if happy face, leave
+
+					}
+
+					if (hit.transform.GetComponentInParent<S_CustomerGeneration> ().myRequest == "Berry Bliss" && GameObject.Find("GameManager").GetComponent<S_InventoryManager>().currentShakenBerryBliss > 0)
+					{
+						// disable lemon twist on bar
+						GameObject.Find("ShakingStationCamera").GetComponent<S_ShakingStationControls>().berryBliss.SetActive(false);
+						// minus 1 from inventory
+						GameObject.Find("GameManager").GetComponent<S_InventoryManager>().currentShakenBerryBliss--;
+						// give customer happy face
+						GameObject.Find("Customer(Clone)").GetComponent<S_CustomerGeneration>().HappyCustomer();
+
+						// if happy face, leave
+
+					}
+
+					if (hit.transform.GetComponentInParent<S_CustomerGeneration> ().myRequest == "Abomination" && GameObject.Find("GameManager").GetComponent<S_InventoryManager>().currentShakenAbomination > 0)
+					{
+						// disable lemon twist on bar
+						GameObject.Find("ShakingStationCamera").GetComponent<S_ShakingStationControls>().abomination.SetActive(false);
+						// minus 1 from inventory
+						GameObject.Find("GameManager").GetComponent<S_InventoryManager>().currentShakenAbomination--;
+						// give customer happy face
+						GameObject.Find("Customer(Clone)").GetComponent<S_CustomerGeneration>().HappyCustomer();
+
+						// if happy face, leave
+
+					}
+				}
+
 			}
 		}
+
+
 	}
 
 	public void ShowWorldCam()
@@ -170,6 +260,8 @@ public class S_CameraController : MonoBehaviour
 		blendingStationCollider.GetComponent<BoxCollider> ().enabled = true;
 		shakingStationCam.enabled = false;
 		shakingStaionCanvas.enabled = false;
+		shakingStationControls.GetComponent<S_ShakingStationControls> ().enabled = false;
+		shakingStationCollider.GetComponent<BoxCollider> ().enabled = true;
 	}
 
 	void ShowMenuStationCam()
@@ -188,6 +280,8 @@ public class S_CameraController : MonoBehaviour
 		blendingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		shakingStationCam.enabled = false;
 		shakingStaionCanvas.enabled = false;
+		shakingStationControls.GetComponent<S_ShakingStationControls> ().enabled = false;
+		shakingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 	}
 
 	void ShowCuttingStationCam()
@@ -206,6 +300,8 @@ public class S_CameraController : MonoBehaviour
 		blendingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		shakingStationCam.enabled = false;
 		shakingStaionCanvas.enabled = false;
+		shakingStationControls.GetComponent<S_ShakingStationControls> ().enabled = false;
+		shakingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 	}
 
 	void ShowBlendingStationCam()
@@ -224,6 +320,8 @@ public class S_CameraController : MonoBehaviour
 		blendingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		shakingStationCam.enabled = false;
 		shakingStaionCanvas.enabled = false;
+		shakingStationControls.GetComponent<S_ShakingStationControls> ().enabled = false;
+		shakingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 	}
 
 	void ShowShakingStationCam()
@@ -242,5 +340,7 @@ public class S_CameraController : MonoBehaviour
 		blendingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 		shakingStationCam.enabled = true;
 		shakingStaionCanvas.enabled = true;
+		shakingStationControls.GetComponent<S_ShakingStationControls> ().enabled = true;
+		shakingStationCollider.GetComponent<BoxCollider> ().enabled = false;
 	}
 }

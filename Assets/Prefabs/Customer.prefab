@@ -53,9 +53,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4381396586226830}
   - component: {fileID: 212444888424774768}
+  - component: {fileID: 65801787953018344}
   m_Layer: 0
   m_Name: Request
-  m_TagString: Untagged
+  m_TagString: Request
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +132,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65801787953018344
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1396770974416470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.189999, y: 11.25, z: 0.19999999}
+  m_Center: {x: -0.0000019073486, y: -0.0000019073486, z: -0.00000047683716}
 --- !u!114 &114279552109128640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,10 +159,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 67cca45fafe83f345baebe675c282666, type: 3}
   - {fileID: 21300000, guid: e9ffe507979702a41b5910f5098ac458, type: 3}
   - {fileID: 21300000, guid: 5e8c707937378e04aa43e9aa87823bb4, type: 3}
+  femaleHappyHeads:
+  - {fileID: 21300000, guid: c8647522f8540124b9f23c6f1f769007, type: 3}
+  - {fileID: 21300000, guid: 25cc32398db07c5448ea64a383f1af05, type: 3}
+  - {fileID: 21300000, guid: 9e78030b838aef44c9099e1b45868e9b, type: 3}
   maleHeads:
   - {fileID: 21300000, guid: 1a53f880ee6beb74f8253088f99fed81, type: 3}
   - {fileID: 21300000, guid: cdd12e4bef6bbf64b84d59a43d189e8d, type: 3}
   - {fileID: 21300000, guid: 7d054bbd0438e4f4589f59313803d571, type: 3}
+  maleHappyHeads:
+  - {fileID: 21300000, guid: c132f96e4f40603478c549d870701edb, type: 3}
+  - {fileID: 21300000, guid: 3007df0aeb1a5ed4c8d648a74f7ec617, type: 3}
+  - {fileID: 21300000, guid: 32cfe4679f2e03e4bbba04037420d900, type: 3}
   femaleBodies:
   - {fileID: 21300000, guid: 2685dcffdf70ad840bb109a988e60ecd, type: 3}
   - {fileID: 21300000, guid: 51eaa31b25280e847b58a91a5bf93a62, type: 3}
@@ -165,6 +186,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7f44f837291eb6e498671b1902034535, type: 3}
   - {fileID: 21300000, guid: b753a7e367a6eaf4390338a10a4221a3, type: 3}
   - {fileID: 21300000, guid: 601711ea2caa83544901bcb9b6340aad, type: 3}
+  myRequest: nothing
 --- !u!114 &114467960731321642
 MonoBehaviour:
   m_ObjectHideFlags: 1

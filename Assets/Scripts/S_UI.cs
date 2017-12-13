@@ -212,4 +212,10 @@ public class S_UI : MonoBehaviour
 		environment.SetActive (false);
 
 	}
+
+	public void ShowLevelComplete()
+	{
+		Time.timeScale = 0.0f;
+		levelCompleteScreen.SetActive (true);
+	}
 }

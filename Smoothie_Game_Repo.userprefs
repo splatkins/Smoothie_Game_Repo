@@ -1,17 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\S_BlendingStationControls.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\S_CustomerMovement.cs">
     <Files>
-      <File FileName="Assets\Scripts\S_SpawnEnvironment.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\S_CameraController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\S_CustomerGeneration.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\S_CustomerMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\S_CustomerSpawn.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\S_UI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\S_CameraController.cs" Line="234" Column="95" />
+      <File FileName="Assets\Scripts\S_UI.cs" Line="218" Column="25" />
       <File FileName="Assets\Scripts\S_BarController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\S_InventoryManager.cs" Line="39" Column="292" />
-      <File FileName="Assets\S_BlendingStationControls.cs" Line="462" Column="70" />
-      <File FileName="Assets\Scripts\S_CuttingStationControls.cs" Line="39" Column="2" />
+      <File FileName="Assets\Scripts\S_InventoryManager.cs" Line="42" Column="170" />
+      <File FileName="Assets\Scripts\S_BlendingStationControls.cs" Line="44" Column="1" />
+      <File FileName="Assets\Scripts\S_ShakingStationControls.cs" Line="350" Column="33" />
+      <File FileName="Assets\Scripts\S_CuttingStationControls.cs" Line="88" Column="7" />
+      <File FileName="Assets\Scripts\S_CustomerGeneration.cs" Line="26" Column="2" NotebookId="1" />
+      <File FileName="Assets\Scripts\S_CustomerSpawn.cs" Line="19" Column="2" NotebookId="1" />
+      <File FileName="Assets\Scripts\S_CustomerMovement.cs" Line="39" Column="76" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

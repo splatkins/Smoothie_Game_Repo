@@ -43,6 +43,15 @@ TagManager:
   - PeeledOrange
   - SlicedStrawberry
   - BlenderLidOn
+  - UnshakenLemonTwist
+  - Shaker
+  - UnshakenOrangeCrush
+  - UnshakenCitrusBurst
+  - UnshakenBananaBanter
+  - UnshakenAbomination
+  - UnshakenBerryBliss
+  - ShakerLidOn
+  - Request
   layers:
   - Default
   - TransparentFX

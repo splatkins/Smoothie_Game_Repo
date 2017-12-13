@@ -35,6 +35,13 @@ public class S_CustomerMovement : MonoBehaviour
 			if (transform.position == doorPosition)
 			{
 				doorReached = true;
+
+				if (this.transform.GetComponent<S_CustomerGeneration> ().happy == true)
+				{
+					print ("Level complete");
+					// level complete
+					GameObject.Find("GameManager").GetComponent<S_UI>().ShowLevelComplete();
+				}
 			}
 		}
 
@@ -54,6 +61,11 @@ public class S_CustomerMovement : MonoBehaviour
 			// make request
 			this.GetComponent<S_CustomerGeneration>().MakeRquest();
 			madeRequest = true;
+		}
+
+		if (this.transform.GetComponent<S_CustomerGeneration> ().happy == true)
+		{
+			Leave ();
 		}
 	}
 
@@ -125,5 +137,17 @@ public class S_CustomerMovement : MonoBehaviour
 		}
 
 		//print ("chosen bar point " + chosenBarPoint);
+	}
+
+	void Leave()
+	{
+		
+		doorReached = false;
+
+
+//		print ("Level complete");
+//		// level complete
+//		GameObject.Find("GameManager").GetComponent<S_UI>().ShowLevelComplete();
+		
 	}
 }
